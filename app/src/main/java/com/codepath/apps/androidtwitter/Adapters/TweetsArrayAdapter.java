@@ -119,16 +119,15 @@ public class TweetsArrayAdapter extends RecyclerView.Adapter<TweetsArrayAdapter.
 
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, int position) {
+        viewHolder.tvUserName.setText("");
         Tweet tweet = mTweets.get(position);
-
-        viewHolder.tvUserName.setText(tweet.getUser().getScreenName());
         viewHolder.tvBody.setText(tweet.getBody());
         viewHolder.tvCreatedAt.setText(tweet.getCreatedAt());
         viewHolder.ivImage.setImageResource(android.R.color.transparent);
         if (tweet.getUser() != null){
+            viewHolder.tvUserName.setText(tweet.getUser().getScreenName());
             Glide.with(mContext).load(tweet.getUser().getProfileImageUrl()).centerCrop().into(viewHolder.ivImage);
         }
-
     }
     @Override
     public int getItemCount() {

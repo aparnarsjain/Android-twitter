@@ -1,7 +1,6 @@
 package com.codepath.apps.androidtwitter;
 
 import android.content.Context;
-import android.util.Log;
 
 import com.codepath.apps.androidtwitter.models.User;
 import com.codepath.oauth.OAuthBaseClient;
@@ -9,8 +8,6 @@ import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 
-import org.apache.http.Header;
-import org.json.JSONObject;
 import org.scribe.builder.api.Api;
 import org.scribe.builder.api.TwitterApi;
 
@@ -57,21 +54,24 @@ public class TwitterClient extends OAuthBaseClient {
 		params.put("status",text);
 		getClient().post(apiUrl, params, handler);
 	}
-	public User getCurrentUser() {
+	public User getCurrentUser(JsonHttpResponseHandler handler) {
 		if (currentUser == null) {
 			String apiUrl = getApiUrl("account/verify_credentials.json");
-			getClient().get(apiUrl,new JsonHttpResponseHandler(){
-				@Override
-				public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-//					Gson gson = new GsonBuilder().create();
-//					currentUser =  gson.fromJson(response.toString(), User.class);
-					Log.d("DBUG", response.toString());
-				}
-				@Override
-				public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
-					Log.d("DEBUG", "Failed to grab user object");
-				}
-			});
+			client.get(apiUrl, handler);
+//			getClient().get(apiUrl,new JsonHttpResponseHandler(){
+//				@Override
+//				public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+////					Gson gson = new GsonBuilder().create();
+////					currentUser =  gson.fromJson(response.toString(), User.class);
+//					currentUser = User.fromJsonObject(response);
+//					Log.d("DEBUG", response.toString());
+//					Log.d("DEBUG", currentUser.toString());
+//				}
+//				@Override
+//				public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+//					Log.d("DEBUG", "Failed to grab user object");
+//				}
+//			});
 		}
 		return currentUser;
 	}

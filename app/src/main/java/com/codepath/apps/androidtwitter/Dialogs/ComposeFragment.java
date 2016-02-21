@@ -1,8 +1,7 @@
 package com.codepath.apps.androidtwitter.Dialogs;
 
-import android.content.Context;
+import android.app.Activity;
 import android.content.DialogInterface;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.util.Log;
@@ -18,6 +17,7 @@ import com.codepath.apps.androidtwitter.R;
 import com.codepath.apps.androidtwitter.TwitterApplication;
 import com.codepath.apps.androidtwitter.TwitterClient;
 import com.codepath.apps.androidtwitter.models.Tweet;
+import com.codepath.apps.androidtwitter.models.User;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
 import org.apache.http.Header;
@@ -29,15 +29,21 @@ import butterknife.ButterKnife;
 /**
  * Created by aparna on 2/19/16.
  */
-public class ComposeFragment extends DialogFragment implements View.OnClickListener {
+public class ComposeFragment extends DialogFragment {
     private TwitterClient client;
 
     @Bind(R.id.editText) EditText etCompose;
     @Bind(R.id.btnTweet) Button btnTweet;
     @Bind(R.id.ivUserImage) ImageView userImage;
 
+    ComposeFragmentListener listener;
 
-    private OnFragmentInteractionListener mListener;
+
+    // 1. Defines the listener interface with a method passing back data result.
+    public interface ComposeFragmentListener {
+        void onFinishEditDialog(Tweet justComposed);
+    }
+
 
     public ComposeFragment() {
         // Required empty public constructor
@@ -61,24 +67,25 @@ public class ComposeFragment extends DialogFragment implements View.OnClickListe
         // Inflate the layout for this fragment
         final View view = inflater.inflate(R.layout.fragment_compose, container, false);
         ButterKnife.bind(this, view);
-//        final User currUser = client.getCurrentUser();
+        final User currUser = client.getCurrentUser(new JsonHttpResponseHandler(){
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                super.onSuccess(statusCode, headers, response);
+            }
+        });
 //        Glide.with(getContext()).load(currUser.getProfileImageUrl()).centerCrop().into(userImage);
         final String newTweetText = etCompose.getText().toString();
         btnTweet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                client.postTweetOrReply(newTweetText, new JsonHttpResponseHandler(){
+                client.postTweetOrReply(etCompose.getText().toString(), new JsonHttpResponseHandler() {
                     @Override
                     public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                         super.onSuccess(statusCode, headers, response);
                         //maybe add to the adapter
                         Log.d("DEBUG", "success: post tweet " + response.toString());
-                        Tweet justComposed = new Tweet();
-                        justComposed.setBody(newTweetText);
-//                        justComposed.setUser(currUser);
-                        TimelineActivity tlActivity = (TimelineActivity)getActivity();
-                        tlActivity.processNewTweetFromFragment(justComposed);
-
+                        Tweet justComposed = Tweet.fromJSon(response);
+                        listener.onFinishEditDialog(justComposed);
                     }
 
                     @Override
@@ -101,49 +108,13 @@ public class ComposeFragment extends DialogFragment implements View.OnClickListe
         return view;
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
-    }
 
     @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        listener = (ComposeFragmentListener)getActivity();
     }
 
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
-    }
-
-    @Override
-    public void onClick(View v) {
-
-    }
-
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p/>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
-    }
     @Override
     public void onDismiss(DialogInterface dialog) {
         super.onDismiss(dialog);

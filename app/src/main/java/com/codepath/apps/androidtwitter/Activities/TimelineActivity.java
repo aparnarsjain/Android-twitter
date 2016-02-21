@@ -2,7 +2,6 @@ package com.codepath.apps.androidtwitter.Activities;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.MenuItemCompat;
@@ -36,7 +35,7 @@ import java.util.ArrayList;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class TimelineActivity extends AppCompatActivity implements ComposeFragment.OnFragmentInteractionListener {
+public class TimelineActivity extends AppCompatActivity implements ComposeFragment.ComposeFragmentListener {
     private TwitterClient client;
     private ArrayList<Tweet> tweets;
     private TweetsArrayAdapter aTweets;
@@ -160,12 +159,10 @@ public class TimelineActivity extends AppCompatActivity implements ComposeFragme
 
     }
 
-    @Override
-    public void onFragmentInteraction(Uri uri) {
 
-    }
-    public void processNewTweetFromFragment(Tweet tweet) {
-        tweets.add(0, tweet);
+    @Override
+    public void onFinishEditDialog(Tweet justComposed) {
+        tweets.add(0, justComposed);
         aTweets.notifyDataSetChanged();
     }
 }
