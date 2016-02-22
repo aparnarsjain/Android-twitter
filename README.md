@@ -25,6 +25,6 @@ The following advanced user stories are optional:
 * [x] Bonus: Replace Picasso with Glide for more efficient image rendering. (1 point)
 
 Gif Image
-
-
 ![Alt Text](twittergif.gif)
+
+
