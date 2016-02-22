@@ -100,8 +100,13 @@ public class TimelineActivity extends AppCompatActivity implements ComposeFragme
                 super.onSuccess(statusCode, headers, response);
                 mCreateAndSaveFile("offlineFile", response.toString());
                 aTweets.addAll(Tweet.fromJsonArray(response));
+                aTweets.addAll(tweets);
                 aTweets.notifyDataSetChanged();
-                Log.d("DEBUG", aTweets.toString());
+//                Gson gson = new GsonBuilder().create();
+//                Type listType = new TypeToken<ArrayList<Tweet>>(){}.getType();
+//                ArrayList<Tweet> tweets = gson.fromJson(response.toString(),listType);
+
+                Log.d("DEBUG", "success " + response.toString());
 
             }
 
@@ -164,5 +169,9 @@ public class TimelineActivity extends AppCompatActivity implements ComposeFragme
     public void onFinishEditDialog(Tweet justComposed) {
         tweets.add(0, justComposed);
         aTweets.notifyDataSetChanged();
+    }
+
+    public static void main(String[] args) {
+       
     }
 }

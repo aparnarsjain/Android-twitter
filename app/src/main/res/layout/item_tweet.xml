@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="200dp">
+    android:layout_height="wrap_content">
 
     <ImageView
         android:layout_width="75dp"
@@ -15,16 +15,17 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="5dp" />
 
-    <EditText
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tvUserName"
         android:text="Caltrain_News"
+        android:textColor="@color/DarkerGray"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/ivImage"
         android:textStyle="bold" />
 
-    <EditText
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tvBody"
@@ -32,7 +33,9 @@
         android:text="We also have real time departures by station(which some prefer to text/email alerts)"
         android:layout_below="@id/tvUserName"
         android:layout_toRightOf="@+id/ivImage"
+        android:textColor="@color/BeforeBlack"
         android:maxLines="3"
+        android:layout_marginTop="5dp"
         android:layout_marginRight="5dp"
         android:layout_marginBottom="5dp" />
 
@@ -57,15 +60,16 @@
         android:text="411"
         android:id="@+id/tvRetweetCount"
         android:layout_below="@+id/tvBody"
-        android:layout_toRightOf="@+id/tvUserName"
+        android:layout_toRightOf="@+id/btnRetweet"
+        android:layout_marginLeft="5dp"
         android:layout_toEndOf="@+id/tvUserName" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tvCreatedAt"
+        android:textColor="@color/DarkerGray"
         android:layout_alignTop="@id/tvUserName"
-        android:layout_marginTop="10dp"
         android:layout_marginRight="5dp"
         android:layout_alignParentRight="true"
         android:text="24 m" />

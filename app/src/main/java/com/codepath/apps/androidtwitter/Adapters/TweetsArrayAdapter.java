@@ -48,11 +48,11 @@ public class TweetsArrayAdapter extends RecyclerView.Adapter<TweetsArrayAdapter.
             holder = (ViewHolder)convertView.getTag();
         }
 
-        holder.tvUserName.setText(tweet.getUser().getScreenName());
-        holder.tvBody.setText(tweet.getBody());
+        holder.tvUserName.setText(tweet.getUser().getScreen_name());
+        holder.tvBody.setText(tweet.getText());
         holder.tvCreatedAt.setText(tweet.getCreatedAt());
         holder.ivImage.setImageResource(android.R.color.transparent);
-        Glide.with(getContext()).load(tweet.getUser().getProfileImageUrl()).centerCrop().into(holder.ivImage);
+        Glide.with(getContext()).load(tweet.getUser().getProfile_image_url()).centerCrop().into(holder.ivImage);
 
         return convertView;
     }
@@ -121,12 +121,12 @@ public class TweetsArrayAdapter extends RecyclerView.Adapter<TweetsArrayAdapter.
     public void onBindViewHolder(ViewHolder viewHolder, int position) {
         viewHolder.tvUserName.setText("");
         Tweet tweet = mTweets.get(position);
-        viewHolder.tvBody.setText(tweet.getBody());
+        viewHolder.tvBody.setText(tweet.getText());
         viewHolder.tvCreatedAt.setText(tweet.getCreatedAt());
         viewHolder.ivImage.setImageResource(android.R.color.transparent);
         if (tweet.getUser() != null){
-            viewHolder.tvUserName.setText(tweet.getUser().getScreenName());
-            Glide.with(mContext).load(tweet.getUser().getProfileImageUrl()).centerCrop().into(viewHolder.ivImage);
+            viewHolder.tvUserName.setText(tweet.getUser().getScreen_name());
+            Glide.with(mContext).load(tweet.getUser().getProfile_image_url()).centerCrop().into(viewHolder.ivImage);
         }
     }
     @Override

@@ -22,8 +22,8 @@ public class User {
 
     private String name;
     private long uid;
-    private String screenName;
-    private String profileImageUrl;
+    private String screen_name;
+    private String profile_image_url;
 
     public String getName() {
         return name;
@@ -33,12 +33,12 @@ public class User {
         return uid;
     }
 
-    public String getScreenName() {
-        return screenName;
+    public String getScreen_name() {
+        return screen_name;
     }
 
-    public String getProfileImageUrl() {
-        return profileImageUrl;
+    public String getProfile_image_url() {
+        return profile_image_url;
     }
 
     public static User fromJsonObject(JSONObject json){
@@ -46,8 +46,8 @@ public class User {
         try {
             u.name = json.getString("name");
             u.uid = json.getLong("id");
-            u.screenName = json.getString("screen_name");
-            u.profileImageUrl = json.getString("profile_image_url");
+            u.screen_name = json.getString("screen_name");
+            u.profile_image_url = json.getString("profile_image_url");
         } catch (JSONException e) {
             e.printStackTrace();
         }

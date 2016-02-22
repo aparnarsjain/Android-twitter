@@ -111,7 +111,7 @@ import java.util.Locale;
 
 //parse the JSON + store the data, encapsulte state logic or any display logic
 public class Tweet {
-    private String body;
+    private String text;
     private long uid; //unique id for the tweet
     private User user;
     private String createdAt;
@@ -120,8 +120,8 @@ public class Tweet {
         return user;
     }
 
-    public String getBody() {
-        return body;
+    public String getText() {
+        return text;
     }
 
     public long getUid() {
@@ -136,8 +136,8 @@ public class Tweet {
         this.user = user;
     }
 
-    public void setBody(String body) {
-        this.body = body;
+    public void setText(String text) {
+        this.text = text;
     }
 
 
@@ -145,7 +145,7 @@ public class Tweet {
     public static Tweet fromJSon(JSONObject jsonObject){
         Tweet tweet = new Tweet();
         try {
-            tweet.body = jsonObject.getString("text");
+            tweet.text = jsonObject.getString("text");
             tweet.uid = jsonObject.getLong("id");
             tweet.createdAt = getRelativeTimeAgo(jsonObject.getString("created_at"));
             tweet.user = User.fromJsonObject(jsonObject.getJSONObject("user"));

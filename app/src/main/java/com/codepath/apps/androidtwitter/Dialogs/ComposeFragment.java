@@ -4,6 +4,9 @@ import android.app.Activity;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
+import android.support.v4.content.ContextCompat;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,13 +14,17 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.codepath.apps.androidtwitter.Activities.TimelineActivity;
 import com.codepath.apps.androidtwitter.R;
 import com.codepath.apps.androidtwitter.TwitterApplication;
 import com.codepath.apps.androidtwitter.TwitterClient;
 import com.codepath.apps.androidtwitter.models.Tweet;
 import com.codepath.apps.androidtwitter.models.User;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
 import org.apache.http.Header;
@@ -35,6 +42,7 @@ public class ComposeFragment extends DialogFragment {
     @Bind(R.id.editText) EditText etCompose;
     @Bind(R.id.btnTweet) Button btnTweet;
     @Bind(R.id.ivUserImage) ImageView userImage;
+    @Bind(R.id.tvCharCount) TextView tvCharCount;
 
     ComposeFragmentListener listener;
 
@@ -71,10 +79,38 @@ public class ComposeFragment extends DialogFragment {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                 super.onSuccess(statusCode, headers, response);
+//                User thisUser = User.fromJsonObject(response);
+                Gson gson = new GsonBuilder().create();
+                User thisUser = gson.fromJson(response.toString(), User.class);
+                Glide.with(getContext()).load(thisUser.getProfile_image_url()).centerCrop().into(userImage);
+
+
             }
         });
-//        Glide.with(getContext()).load(currUser.getProfileImageUrl()).centerCrop().into(userImage);
-        final String newTweetText = etCompose.getText().toString();
+        etCompose.addTextChangedListener(new TextWatcher() {
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                tvCharCount.setText(Integer.toString(140-s.length()));
+                if(s.length() > 140) {
+                    tvCharCount.setTextColor(ContextCompat.getColor(getContext(), R.color.Red));
+
+                }else {
+                    tvCharCount.setTextColor(ContextCompat.getColor(getContext(), R.color.Green));
+                }
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        } );
         btnTweet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -84,7 +120,11 @@ public class ComposeFragment extends DialogFragment {
                         super.onSuccess(statusCode, headers, response);
                         //maybe add to the adapter
                         Log.d("DEBUG", "success: post tweet " + response.toString());
-                        Tweet justComposed = Tweet.fromJSon(response);
+//                        Tweet justComposed = Tweet.fromJSon(response);
+                        Gson gson = new GsonBuilder().create();
+                        // Define Response class to correspond to the JSON response returned
+                        Tweet justComposed = gson.fromJson(response.toString(), Tweet.class);
+
                         listener.onFinishEditDialog(justComposed);
                     }
 
