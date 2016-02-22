@@ -27,4 +27,3 @@ The following advanced user stories are optional:
 Gif Image
 
 
-![Alt Text](twittergif.gif)
