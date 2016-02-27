@@ -6,6 +6,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.Serializable;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -110,7 +111,7 @@ import java.util.Locale;
 
 
 //parse the JSON + store the data, encapsulte state logic or any display logic
-public class Tweet {
+public class Tweet implements Serializable {
     private String text;
     private long uid; //unique id for the tweet
     private User user;

@@ -62,7 +62,7 @@
         android:layout_below="@+id/tvBody"
         android:layout_toRightOf="@+id/btnRetweet"
         android:layout_marginLeft="5dp"
-        android:layout_toEndOf="@+id/tvUserName" />
+        android:layout_toEndOf="@id/tvUserName" />
 
     <TextView
         android:layout_width="wrap_content"

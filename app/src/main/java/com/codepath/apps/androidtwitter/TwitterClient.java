@@ -58,29 +58,25 @@ public class TwitterClient extends OAuthBaseClient {
 		if (currentUser == null) {
 			String apiUrl = getApiUrl("account/verify_credentials.json");
 			client.get(apiUrl, handler);
-//			getClient().get(apiUrl,new JsonHttpResponseHandler(){
-//				@Override
-//				public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-////					Gson gson = new GsonBuilder().create();
-////					currentUser =  gson.fromJson(response.toString(), User.class);
-//					currentUser = User.fromJsonObject(response);
-//					Log.d("DEBUG", response.toString());
-//					Log.d("DEBUG", currentUser.toString());
-//				}
-//				@Override
-//				public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
-//					Log.d("DEBUG", "Failed to grab user object");
-//				}
-//			});
 		}
 		return currentUser;
 	}
-	/* 1. Define the endpoint URL with getApiUrl and pass a relative path to the endpoint
-	 * 	  i.e getApiUrl("statuses/home_timeline.json");
-	 * 2. Define the parameters to pass to the request (query or body)
-	 *    i.e RequestParams params = new RequestParams("foo", "bar");
-	 * 3. Define the request method and make a call to the client
-	 *    i.e client.get(apiUrl, params, handler);
-	 *    i.e client.post(apiUrl, params, handler);
-	 */
+
+	public void getMentionsTimeline(long max_id, int count, JsonHttpResponseHandler jsonHttpResponseHandler) {
+		String apiUrl = getApiUrl("statuses/mentions_timeline.json");
+		// Can specify query string params directly or through RequestParams.
+		RequestParams params = new RequestParams();
+		params.put("count", count);
+		if (max_id > 0){
+			params.put("max_id", max_id);
+		}
+		client.get(apiUrl, params, jsonHttpResponseHandler);
+	}
+	public void getUserTimeline(String screenName, AsyncHttpResponseHandler handler){
+		String apiUrl = getApiUrl("statuses/user_timeline.json");
+		RequestParams params = new RequestParams();
+		params.put("count", 25);
+		params.put("screen_name", screenName);
+		client.get(apiUrl, params, handler);
+	}
 }
