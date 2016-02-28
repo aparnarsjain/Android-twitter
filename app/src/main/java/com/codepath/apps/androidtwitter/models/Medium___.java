@@ -8,7 +8,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -17,56 +16,79 @@ import javax.annotation.Generated;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("org.jsonschema2pojo")
 @JsonPropertyOrder({
-    "url",
-    "description"
+    "w",
+    "h",
+    "resize"
 })
-public class Entities implements Serializable {
+public class Medium___ {
 
-    @JsonProperty("url")
-    private Url url;
-    @JsonProperty("description")
-    private Description description;
+    @JsonProperty("w")
+    private Integer w;
+    @JsonProperty("h")
+    private Integer h;
+    @JsonProperty("resize")
+    private String resize;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     /**
      * 
      * @return
-     *     The url
+     *     The w
      */
-    @JsonProperty("url")
-    public Url getUrl() {
-        return url;
+    @JsonProperty("w")
+    public Integer getW() {
+        return w;
     }
 
     /**
      * 
-     * @param url
-     *     The url
+     * @param w
+     *     The w
      */
-    @JsonProperty("url")
-    public void setUrl(Url url) {
-        this.url = url;
+    @JsonProperty("w")
+    public void setW(Integer w) {
+        this.w = w;
     }
 
     /**
      * 
      * @return
-     *     The description
+     *     The h
      */
-    @JsonProperty("description")
-    public Description getDescription() {
-        return description;
+    @JsonProperty("h")
+    public Integer getH() {
+        return h;
     }
 
     /**
      * 
-     * @param description
-     *     The description
+     * @param h
+     *     The h
      */
-    @JsonProperty("description")
-    public void setDescription(Description description) {
-        this.description = description;
+    @JsonProperty("h")
+    public void setH(Integer h) {
+        this.h = h;
+    }
+
+    /**
+     * 
+     * @return
+     *     The resize
+     */
+    @JsonProperty("resize")
+    public String getResize() {
+        return resize;
+    }
+
+    /**
+     * 
+     * @param resize
+     *     The resize
+     */
+    @JsonProperty("resize")
+    public void setResize(String resize) {
+        this.resize = resize;
     }
 
     @JsonAnyGetter

@@ -101,8 +101,8 @@ public class TweetsArrayAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         tvHolder.tvCreatedAt.setText(tweet.getCreatedAt());
         tvHolder.ivImage.setImageResource(android.R.color.transparent);
         if (tweet.getUser() != null){
-            tvHolder.tvUserName.setText(tweet.getUser().getScreen_name());
-            Glide.with(mContext).load(tweet.getUser().getProfile_image_url()).centerCrop().into(tvHolder.ivImage);
+            tvHolder.tvUserName.setText(tweet.getUser().getScreenName());
+            Glide.with(mContext).load(tweet.getUser().getProfileImageUrl()).centerCrop().into(tvHolder.ivImage);
         }
 
         tvHolder.ivImage.setOnClickListener(new View.OnClickListener() {

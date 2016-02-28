@@ -41,7 +41,7 @@ public class UserTimelineFragment extends TweetsListFragment {
 //                fetchMoreTweets(page);
                 List<Tweet> tweets = aTweets.getTweets();
                 Tweet lastTweet = tweets.get(tweets.size() - 1);
-                populateTimeline(lastTweet.getUid(), 25);
+                populateTimeline(lastTweet.getId(), 25);
             }
         });
         return v;
@@ -55,7 +55,7 @@ public class UserTimelineFragment extends TweetsListFragment {
         return fragmentUserTimeline;
     }
 
-    private void populateTimeline(long max_id, int count) {
+    private void populateTimeline(double max_id, int count) {
         String screenName = getArguments().getString("screenName");
         client.getUserTimeline(screenName, new JsonHttpResponseHandler() {
             @Override

@@ -9,7 +9,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Generated;
@@ -17,56 +19,33 @@ import javax.annotation.Generated;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("org.jsonschema2pojo")
 @JsonPropertyOrder({
-    "url",
-    "description"
+    "media"
 })
-public class Entities implements Serializable {
+public class ExtendedEntities implements Serializable {
 
-    @JsonProperty("url")
-    private Url url;
-    @JsonProperty("description")
-    private Description description;
+    @JsonProperty("media")
+    private List<Medium__> media = new ArrayList<Medium__>();
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     /**
      * 
      * @return
-     *     The url
+     *     The media
      */
-    @JsonProperty("url")
-    public Url getUrl() {
-        return url;
+    @JsonProperty("media")
+    public List<Medium__> getMedia() {
+        return media;
     }
 
     /**
      * 
-     * @param url
-     *     The url
+     * @param media
+     *     The media
      */
-    @JsonProperty("url")
-    public void setUrl(Url url) {
-        this.url = url;
-    }
-
-    /**
-     * 
-     * @return
-     *     The description
-     */
-    @JsonProperty("description")
-    public Description getDescription() {
-        return description;
-    }
-
-    /**
-     * 
-     * @param description
-     *     The description
-     */
-    @JsonProperty("description")
-    public void setDescription(Description description) {
-        this.description = description;
+    @JsonProperty("media")
+    public void setMedia(List<Medium__> media) {
+        this.media = media;
     }
 
     @JsonAnyGetter

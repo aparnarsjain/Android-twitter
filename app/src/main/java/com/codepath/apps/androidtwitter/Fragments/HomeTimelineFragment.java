@@ -41,13 +41,13 @@ public class HomeTimelineFragment extends TweetsListFragment {
 //                fetchMoreTweets(page);
                 List<Tweet> tweets = aTweets.getTweets();
                 Tweet lastTweet = tweets.get(tweets.size() - 1);
-                populateTimeline(lastTweet.getUid(), 25);
+                populateTimeline(lastTweet.getId(), 25);
             }
         });
         return v;
     }
 
-    private void populateTimeline(long max_id, int count) {
+    private void populateTimeline(double max_id, int count) {
         client.getHomeTimeline(max_id, count, new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
@@ -70,4 +70,29 @@ public class HomeTimelineFragment extends TweetsListFragment {
             }
         });
     }
+
+//    public static void main(String[] args) {
+//        String strJSON = "{\"entities\":{\"url\":{\"urls\":[{\"url\":\"https:\\/\\/t.co\\/8Y3HVlod9G\",\"expanded_url\":\"https:\\/\\/github.com\\/mobilebridge\",\"display_url\":\"github.com\\/mobilebridge\",\"indices\":[0,23]}]},\"description\":{\"urls\":[]}}}";
+//        Type collectionType = new TypeToken<ArrayList<Tweet>>() {
+//        }.getType();
+//        GsonBuilder gsonBuilder = new GsonBuilder();
+//        Gson gson = gsonBuilder.enableComplexMapKeySerialization().create();
+//        Entities ents = gson.fromJson(strJSON, Entities.class);
+//        String urlStr = "{\"url\": {" +
+//                "          \"urls\": [" +
+//                "            {" +
+//                "              \"url\": \"https:\\/\\/t.co\\/8Y3HVlod9G\"," +
+//                "              \"expanded_url\": \"https:\\/\\/github.com\\/mobilebridge\"," +
+//                "              \"display_url\": \"github.com\\/mobilebridge\"," +
+//                "              \"indices\": [" +
+//                "                0," +
+//                "                23" +
+//                "              ]" +
+//                "            }" +
+//                "          ]" +
+//                "        }}";
+//        Url url = gson.fromJson(urlStr, Url.class);
+//        String urlsStr = "{\"url\":\"https:\\/\\/t.co\\/8Y3HVlod9G\",\"expanded_url\":\"https:\\/\\/github.com\\/mobilebridge\",\"display_url\":\"github.com\\/mobilebridge\",\"indices\":[0,23]}";
+//        Url_ urls = gson.fromJson(urlsStr, Url_.class);
+//    }
 }

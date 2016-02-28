@@ -40,13 +40,13 @@ public class MentionsTimelineFragment extends TweetsListFragment {
             public void onLoadMore(int page, int totalItemsCount) {
                 List<Tweet> tweets = aTweets.getTweets();
                 Tweet lastTweet = tweets.get(tweets.size() - 1);
-                populateTimeline(lastTweet.getUid(), 25);
+                populateTimeline(lastTweet.getId(), 25);
             }
         });
         return v;
     }
 
-    private void populateTimeline(long max_id, int count) {
+    private void populateTimeline(double max_id, int count) {
         client.getMentionsTimeline(max_id, count, new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONArray response) {

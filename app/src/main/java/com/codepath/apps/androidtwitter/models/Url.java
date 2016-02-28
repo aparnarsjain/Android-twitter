@@ -9,7 +9,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Generated;
@@ -17,56 +19,33 @@ import javax.annotation.Generated;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("org.jsonschema2pojo")
 @JsonPropertyOrder({
-    "url",
-    "description"
+    "urls"
 })
-public class Entities implements Serializable {
+public class Url implements Serializable {
 
-    @JsonProperty("url")
-    private Url url;
-    @JsonProperty("description")
-    private Description description;
+    @JsonProperty("urls")
+    private List<Url_> urls = new ArrayList<Url_>();
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     /**
      * 
      * @return
-     *     The url
+     *     The urls
      */
-    @JsonProperty("url")
-    public Url getUrl() {
-        return url;
+    @JsonProperty("urls")
+    public List<Url_> getUrls() {
+        return urls;
     }
 
     /**
      * 
-     * @param url
-     *     The url
+     * @param urls
+     *     The urls
      */
-    @JsonProperty("url")
-    public void setUrl(Url url) {
-        this.url = url;
-    }
-
-    /**
-     * 
-     * @return
-     *     The description
-     */
-    @JsonProperty("description")
-    public Description getDescription() {
-        return description;
-    }
-
-    /**
-     * 
-     * @param description
-     *     The description
-     */
-    @JsonProperty("description")
-    public void setDescription(Description description) {
-        this.description = description;
+    @JsonProperty("urls")
+    public void setUrls(List<Url_> urls) {
+        this.urls = urls;
     }
 
     @JsonAnyGetter

@@ -14,10 +14,15 @@ import com.codepath.apps.androidtwitter.TwitterApplication;
 import com.codepath.apps.androidtwitter.TwitterClient;
 import com.codepath.apps.androidtwitter.models.Tweet;
 import com.codepath.apps.androidtwitter.models.User;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
 import org.apache.http.Header;
 import org.json.JSONObject;
+
+import java.lang.reflect.Type;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -46,8 +51,8 @@ public class ProfileActivity extends AppCompatActivity {
 
         if (tweet != null){
             user = tweet.getUser();
-            screenName = user.getScreen_name();
-            getSupportActionBar().setTitle(user.getScreen_name());
+            screenName = user.getScreenName();
+            getSupportActionBar().setTitle(user.getScreenName());
             populateProfileHeader(user);
 
         }else {
@@ -56,8 +61,14 @@ public class ProfileActivity extends AppCompatActivity {
             client.getCurrentUser(new JsonHttpResponseHandler() {
                 @Override
                 public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-                    user = User.fromJsonObject(response);
-                    getSupportActionBar().setTitle(user.getScreen_name());
+                    Type collectionType = new TypeToken<User>() {
+                    }.getType();
+                    GsonBuilder gsonBuilder = new GsonBuilder();
+                    Gson gson = gsonBuilder.create();
+                    user = gson.fromJson(response.toString(), collectionType);
+
+//                    user = User.fromJsonObject(response);
+                    getSupportActionBar().setTitle(user.getScreenName());
                     populateProfileHeader(user);
                 }
             });
@@ -74,11 +85,11 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     private void populateProfileHeader(User user) {
-        tvUserName.setText(user.getScreen_name());
-        tvTagLine.setText(user.getTag_line());
-        tvFollowers.setText(Long.toString(user.getFollowers_count()));
-        tvFollowing.setText(Long.toString(user.getFollowing_count()));
-        Glide.with(this).load(user.getProfile_image_url()).centerCrop().into(ivUserImage);
+        tvUserName.setText(user.getScreenName());
+        tvTagLine.setText(user.getDescription());
+        tvFollowers.setText(Long.toString(user.getFollowersCount()));
+        tvFollowing.setText(Long.toString(user.getFavouritesCount()));
+        Glide.with(this).load(user.getProfileImageUrl()).centerCrop().into(ivUserImage);
 
     }
 

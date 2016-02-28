@@ -82,7 +82,7 @@ public class ComposeFragment extends DialogFragment {
 //                User thisUser = User.fromJsonObject(response);
                 Gson gson = new GsonBuilder().create();
                 User thisUser = gson.fromJson(response.toString(), User.class);
-                Glide.with(getContext()).load(thisUser.getProfile_image_url()).centerCrop().into(userImage);
+                Glide.with(getContext()).load(thisUser.getProfileImageUrl()).centerCrop().into(userImage);
 
 
             }

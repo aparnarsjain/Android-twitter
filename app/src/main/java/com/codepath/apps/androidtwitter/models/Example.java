@@ -43,7 +43,7 @@ import javax.annotation.Generated;
     "possibly_sensitive",
     "lang"
 })
-public class Tweet implements Serializable {
+public class Example implements Serializable{
 
     @JsonProperty("created_at")
     private String createdAt;
@@ -97,7 +97,6 @@ public class Tweet implements Serializable {
     private String lang;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-    public static final String DATE_FORMAT = "ccc MMM dd hh:mm:ss Z yyyy";
 
     /**
      * 

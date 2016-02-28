@@ -36,8 +36,8 @@ public class DetailActivity extends AppCompatActivity {
     private void populateDetailPage(Tweet tweet) {
         User user = tweet.getUser();
         tvUserName.setText(user.getName());
-        tvScreenName.setText(user.getScreen_name());
-        Glide.with(this).load(user.getProfile_image_url()).centerCrop().into(ivUserImage);
+        tvScreenName.setText(user.getScreenName());
+        Glide.with(this).load(user.getProfileImageUrl()).centerCrop().into(ivUserImage);
 //        Glide.with(this).load(user.getProfile_image_url()).centerCrop().into(ivDetailImage);
 
     }
