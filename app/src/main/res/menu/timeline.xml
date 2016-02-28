@@ -3,11 +3,14 @@
     <item
         android:id="@+id/action_compose"
         android:icon="@drawable/ic_compose"
+        app:showAsAction="ifRoom"
+        android:orderInCategory="200"
         android:onClick="onClickCompose"
         android:title="Compose"></item>
     <item
         android:id="@+id/miProfile"
         app:showAsAction="ifRoom"
+        android:orderInCategory="20"
         android:icon="@drawable/ic_profile"
         android:title="Profile"
         android:onClick="onProfileView">

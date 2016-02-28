@@ -11,12 +11,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.codepath.apps.androidtwitter.Adapters.TweetsArrayAdapter;
-import com.codepath.apps.androidtwitter.Helpers.EndlessRecyclerViewScrollListener;
 import com.codepath.apps.androidtwitter.R;
 import com.codepath.apps.androidtwitter.models.Tweet;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.ButterKnife;
 
@@ -27,6 +25,7 @@ public class TweetsListFragment extends Fragment {
     TweetsArrayAdapter aTweets;
     RecyclerView rvTweets;
 //    @Bind(R.id.rvTweets) RecyclerView rvTweets;
+    LinearLayoutManager linearLayoutManager;
 
     @Nullable
     @Override
@@ -35,18 +34,18 @@ public class TweetsListFragment extends Fragment {
         ButterKnife.bind(this, v);
         rvTweets = (RecyclerView)v.findViewById(R.id.rvTweets);
         rvTweets.setAdapter(aTweets);
-        final LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
+        linearLayoutManager = new LinearLayoutManager(getActivity());
         rvTweets.setLayoutManager(linearLayoutManager);
         //TODO: infinite pagination
-        rvTweets.addOnScrollListener(new EndlessRecyclerViewScrollListener(linearLayoutManager) {
-            @Override
-            public void onLoadMore(int page, int totalItemsCount) {
-//                fetchMoreTweets(page);
-                List<Tweet> tweets = aTweets.getTweets();
-                Tweet lastTweet = tweets.get(tweets.size()-1);
-//                populateTimeline(lastTweet.getUid(), 25);
-            }
-        });
+//        rvTweets.addOnScrollListener(new EndlessRecyclerViewScrollListener(linearLayoutManager) {
+//            @Override
+//            public void onLoadMore(int page, int totalItemsCount) {
+////                fetchMoreTweets(page);
+//                List<Tweet> tweets = aTweets.getTweets();
+//                Tweet lastTweet = tweets.get(tweets.size()-1);
+////                populateTimeline(lastTweet.getUid(), 25);
+//            }
+//        });
         return v;
     }
     @Override

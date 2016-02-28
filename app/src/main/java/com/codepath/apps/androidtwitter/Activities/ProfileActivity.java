@@ -1,4 +1,4 @@
-package com.codepath.apps.restclienttemplate;
+package com.codepath.apps.androidtwitter.Activities;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
@@ -41,11 +41,15 @@ public class ProfileActivity extends AppCompatActivity {
 
         String screenName = "";
 
-
         Tweet tweet = (Tweet)getIntent().getSerializableExtra("tweet");
+//        Tweet tweet = (Tweet) Parcels.unwrap(getIntent().getParcelableExtra("tweet"));
+
         if (tweet != null){
             user = tweet.getUser();
             screenName = user.getScreen_name();
+            getSupportActionBar().setTitle(user.getScreen_name());
+            populateProfileHeader(user);
+
         }else {
             client = TwitterApplication.getRestClient();
             //Get the account info

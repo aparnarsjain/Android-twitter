@@ -10,9 +10,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.codepath.apps.androidtwitter.Activities.DetailActivity;
+import com.codepath.apps.androidtwitter.Activities.ProfileActivity;
 import com.codepath.apps.androidtwitter.R;
 import com.codepath.apps.androidtwitter.models.Tweet;
-import com.codepath.apps.restclienttemplate.ProfileActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +27,9 @@ import butterknife.ButterKnife;
 public class TweetsArrayAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private List<Tweet> mTweets;
     Context mContext;
-    
+
+    private Context context;
+    private Tweet tweet;
     // Define listener member variable
     private static OnItemClickListener listener;
     public interface OnItemClickListener {
@@ -59,6 +62,7 @@ public class TweetsArrayAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         private Context context;
         private Tweet tweet;
 
+
         // We also create a constructor that accepts the entire item row
         // and does the view lookups to find each subview
         public TweetViewHolder(final View itemView) {
@@ -73,7 +77,7 @@ public class TweetsArrayAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         @Override
         public void onClick(View v) {
             // We can access the data within the views
-            Intent i = new Intent(context, ProfileActivity.class);
+            Intent i = new Intent(context, DetailActivity.class);
             i.putExtra("tweet", tweet);
             context.startActivity(i);
         }
@@ -89,9 +93,9 @@ public class TweetsArrayAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int position) {
-        TweetViewHolder tvHolder = (TweetViewHolder)viewHolder;
+        final TweetViewHolder tvHolder = (TweetViewHolder)viewHolder;
         tvHolder.tvUserName.setText("");
-        Tweet tweet = mTweets.get(position);
+        final Tweet tweet = mTweets.get(position);
         ((TweetViewHolder) viewHolder).tweet = tweet;
         tvHolder.tvBody.setText(tweet.getText());
         tvHolder.tvCreatedAt.setText(tweet.getCreatedAt());
@@ -100,7 +104,17 @@ public class TweetsArrayAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
             tvHolder.tvUserName.setText(tweet.getUser().getScreen_name());
             Glide.with(mContext).load(tweet.getUser().getProfile_image_url()).centerCrop().into(tvHolder.ivImage);
         }
+
+        tvHolder.ivImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(mContext, ProfileActivity.class);
+                i.putExtra("tweet", tweet);
+                mContext.startActivity(i);
+            }
+        });
     }
+
 
     @Override
     public int getItemCount() {

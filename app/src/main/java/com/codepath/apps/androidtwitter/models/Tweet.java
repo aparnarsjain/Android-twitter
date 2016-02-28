@@ -2,14 +2,9 @@ package com.codepath.apps.androidtwitter.models;
 
 import android.text.format.DateUtils;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.io.Serializable;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Locale;
 
 /**
@@ -140,40 +135,41 @@ public class Tweet implements Serializable {
     public void setText(String text) {
         this.text = text;
     }
+    public static final String DATE_FORMAT = "ccc MMM dd hh:mm:ss Z yyyy";
 
 
     //deserialize the json
-    public static Tweet fromJSon(JSONObject jsonObject){
-        Tweet tweet = new Tweet();
-        try {
-            tweet.text = jsonObject.getString("text");
-            tweet.uid = jsonObject.getLong("id");
-            tweet.createdAt = getRelativeTimeAgo(jsonObject.getString("created_at"));
-            tweet.user = User.fromJsonObject(jsonObject.getJSONObject("user"));
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-        return tweet;
-    }
-
-    public  static ArrayList<Tweet> fromJsonArray(JSONArray jsonArray){
-        ArrayList<Tweet> tweets = new ArrayList<>();
-        for (int i = 0; i < jsonArray.length(); i++) {
-            try {
-                JSONObject tweetJson = jsonArray.getJSONObject(i);
-                Tweet tweet = Tweet.fromJSon(tweetJson);
-                if (tweet != null) {
-                    tweets.add(tweet);
-                }
-            } catch (JSONException e) {
-                e.printStackTrace();
-                continue;
-            }
-
-        }
-        return tweets;
-    }
+//    public static Tweet fromJSon(JSONObject jsonObject){
+//        Tweet tweet = new Tweet();
+//        try {
+//            tweet.text = jsonObject.getString("text");
+//            tweet.uid = jsonObject.getLong("id");
+//            tweet.createdAt = getRelativeTimeAgo(jsonObject.getString("created_at"));
+//            tweet.user = User.fromJsonObject(jsonObject.getJSONObject("user"));
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//        }
+//
+//        return tweet;
+//    }
+//
+//    public  static ArrayList<Tweet> fromJsonArray(JSONArray jsonArray){
+//        ArrayList<Tweet> tweets = new ArrayList<>();
+//        for (int i = 0; i < jsonArray.length(); i++) {
+//            try {
+//                JSONObject tweetJson = jsonArray.getJSONObject(i);
+//                Tweet tweet = Tweet.fromJSon(tweetJson);
+//                if (tweet != null) {
+//                    tweets.add(tweet);
+//                }
+//            } catch (JSONException e) {
+//                e.printStackTrace();
+//                continue;
+//            }
+//
+//        }
+//        return tweets;
+//    }
     // getRelativeTimeAgo("Mon Apr 01 21:16:23 +0000 2014");
     public static String getRelativeTimeAgo(String rawJsonDate) {
         String twitterFormat = "EEE MMM dd HH:mm:ss ZZZZZ yyyy";

@@ -59,8 +59,8 @@ public class User implements Serializable {
             u.screen_name = json.getString("screen_name");
             u.profile_image_url = json.getString("profile_image_url");
             u.tag_line = json.isNull("description") ? null : json.getString("description");
-//            u.followers_count = json.isNull("followers_count") ? null : json.getLong("followers_count");
-//            u.following_count = json.isNull("following_count") ? null : json.getLong("following_count");
+            u.followers_count = json.isNull("followers_count") ? 0 : json.getLong("followers_count");
+            u.following_count = json.isNull("following_count") ? 0 : json.getLong("following_count");
         } catch (JSONException e) {
             e.printStackTrace();
         }

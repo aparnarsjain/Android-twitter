@@ -21,7 +21,6 @@ import com.codepath.apps.androidtwitter.Fragments.HomeTimelineFragment;
 import com.codepath.apps.androidtwitter.Fragments.MentionsTimelineFragment;
 import com.codepath.apps.androidtwitter.R;
 import com.codepath.apps.androidtwitter.models.Tweet;
-import com.codepath.apps.restclienttemplate.ProfileActivity;
 
 public class TimelineActivity extends AppCompatActivity implements ComposeFragment.ComposeFragmentListener {
 //    @Bind(R.id.viewpager) ViewPager vpPager;

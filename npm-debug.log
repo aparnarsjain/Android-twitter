@@ -1,0 +1,160 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', '-g', 'logcat' ]
+2 info using npm@1.4.9
+3 info using node@v0.10.28
+4 verbose cache add [ 'logcat', null ]
+5 verbose cache add name=undefined spec="logcat" args=["logcat",null]
+6 verbose parsed url { protocol: null,
+6 verbose parsed url   slashes: null,
+6 verbose parsed url   auth: null,
+6 verbose parsed url   host: null,
+6 verbose parsed url   port: null,
+6 verbose parsed url   hostname: null,
+6 verbose parsed url   hash: null,
+6 verbose parsed url   search: null,
+6 verbose parsed url   query: null,
+6 verbose parsed url   pathname: 'logcat',
+6 verbose parsed url   path: 'logcat',
+6 verbose parsed url   href: 'logcat' }
+7 silly lockFile 5e6be885-logcat logcat
+8 verbose lock logcat /Users/aparna/.npm/5e6be885-logcat.lock
+9 silly lockFile 5e6be885-logcat logcat
+10 silly lockFile 5e6be885-logcat logcat
+11 verbose addNamed [ 'logcat', '' ]
+12 verbose addNamed [ null, '*' ]
+13 silly lockFile 2b47845d-logcat logcat@
+14 verbose lock logcat@ /Users/aparna/.npm/2b47845d-logcat.lock
+15 silly addNameRange { name: 'logcat', range: '*', hasData: false }
+16 verbose url raw logcat
+17 verbose url resolving [ 'https://registry.npmjs.org/', './logcat' ]
+18 verbose url resolved https://registry.npmjs.org/logcat
+19 info trying registry request attempt 1 at 11:41:39
+20 http GET https://registry.npmjs.org/logcat
+21 http 200 https://registry.npmjs.org/logcat
+22 silly registry.get cb [ 200,
+22 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+22 silly registry.get     etag: '"5VWBXU0KLUDXK913EOCGWJTOO"',
+22 silly registry.get     'content-type': 'application/json',
+22 silly registry.get     'cache-control': 'max-age=300',
+22 silly registry.get     'content-length': '12231',
+22 silly registry.get     'accept-ranges': 'bytes',
+22 silly registry.get     date: 'Sun, 28 Feb 2016 19:41:36 GMT',
+22 silly registry.get     via: '1.1 varnish',
+22 silly registry.get     age: '0',
+22 silly registry.get     connection: 'keep-alive',
+22 silly registry.get     'x-served-by': 'cache-sjc3131-SJC',
+22 silly registry.get     'x-cache': 'MISS',
+22 silly registry.get     'x-cache-hits': '0',
+22 silly registry.get     'x-timer': 'S1456688496.528267,VS0,VE177',
+22 silly registry.get     vary: 'Accept' } ]
+23 silly addNameRange number 2 { name: 'logcat', range: '*', hasData: true }
+24 silly addNameRange versions [ 'logcat',
+24 silly addNameRange   [ '0.0.1', '0.0.2', '0.0.3', '0.0.4', '0.0.5', '0.0.6', '0.0.7' ] ]
+25 verbose addNamed [ 'logcat', '0.0.7' ]
+26 verbose addNamed [ '0.0.7', '0.0.7' ]
+27 silly lockFile 24bfc9a0-logcat-0-0-7 logcat@0.0.7
+28 verbose lock logcat@0.0.7 /Users/aparna/.npm/24bfc9a0-logcat-0-0-7.lock
+29 silly lockFile 97d8a936-pmjs-org-logcat-logcat-0-0-7-tgz https://registry.npmjs.org/logcat/-/logcat-0.0.7.tgz
+30 verbose lock https://registry.npmjs.org/logcat/-/logcat-0.0.7.tgz /Users/aparna/.npm/97d8a936-pmjs-org-logcat-logcat-0-0-7-tgz.lock
+31 verbose addRemoteTarball [ 'https://registry.npmjs.org/logcat/-/logcat-0.0.7.tgz',
+31 verbose addRemoteTarball   '127b68ce5cccccc8b056af2c362f3ec1c952a907' ]
+32 info retry fetch attempt 1 at 11:41:40
+33 verbose fetch to= /var/folders/rq/7blf91fs4x53kz8lxg1cdncm0000gp/T/npm-93160-mangbzBs/1456688500199-0.010770294349640608/tmp.tgz
+34 http GET https://registry.npmjs.org/logcat/-/logcat-0.0.7.tgz
+35 http 200 https://registry.npmjs.org/logcat/-/logcat-0.0.7.tgz
+36 verbose tar unpack /var/folders/rq/7blf91fs4x53kz8lxg1cdncm0000gp/T/npm-93160-mangbzBs/1456688500199-0.010770294349640608/tmp.tgz
+37 silly lockFile de7cc5b0--aparna-npm-logcat-0-0-7-package tar:///Users/aparna/.npm/logcat/0.0.7/package
+38 verbose lock tar:///Users/aparna/.npm/logcat/0.0.7/package /Users/aparna/.npm/de7cc5b0--aparna-npm-logcat-0-0-7-package.lock
+39 silly lockFile 8a32ead2-199-0-010770294349640608-tmp-tgz tar:///var/folders/rq/7blf91fs4x53kz8lxg1cdncm0000gp/T/npm-93160-mangbzBs/1456688500199-0.010770294349640608/tmp.tgz
+40 verbose lock tar:///var/folders/rq/7blf91fs4x53kz8lxg1cdncm0000gp/T/npm-93160-mangbzBs/1456688500199-0.010770294349640608/tmp.tgz /Users/aparna/.npm/8a32ead2-199-0-010770294349640608-tmp-tgz.lock
+41 silly gunzTarPerm modes [ '755', '644' ]
+42 silly gunzTarPerm extractEntry package.json
+43 silly gunzTarPerm modified mode [ 'package.json', 436, 420 ]
+44 silly gunzTarPerm extractEntry .npmignore
+45 silly gunzTarPerm modified mode [ '.npmignore', 436, 420 ]
+46 silly gunzTarPerm extractEntry README.md
+47 silly gunzTarPerm modified mode [ 'README.md', 436, 420 ]
+48 silly gunzTarPerm extractEntry index.js
+49 silly gunzTarPerm modified mode [ 'index.js', 436, 420 ]
+50 silly gunzTarPerm extractEntry bin/logcat
+51 silly gunzTarPerm modified mode [ 'bin/logcat', 509, 493 ]
+52 silly gunzTarPerm extractEntry public/client.html
+53 silly gunzTarPerm modified mode [ 'public/client.html', 436, 420 ]
+54 silly gunzTarPerm extractEntry public/css/bootstrap.min.css
+55 silly gunzTarPerm modified mode [ 'public/css/bootstrap.min.css', 436, 420 ]
+56 silly gunzTarPerm extractEntry public/js/bootstrap.min.js
+57 silly gunzTarPerm modified mode [ 'public/js/bootstrap.min.js', 436, 420 ]
+58 silly gunzTarPerm extractEntry public/js/jquery-1.9.1.min.js
+59 silly gunzTarPerm modified mode [ 'public/js/jquery-1.9.1.min.js', 436, 420 ]
+60 silly gunzTarPerm extractEntry test/app.js
+61 silly gunzTarPerm modified mode [ 'test/app.js', 436, 420 ]
+62 silly lockFile de7cc5b0--aparna-npm-logcat-0-0-7-package tar:///Users/aparna/.npm/logcat/0.0.7/package
+63 silly lockFile de7cc5b0--aparna-npm-logcat-0-0-7-package tar:///Users/aparna/.npm/logcat/0.0.7/package
+64 silly lockFile 8a32ead2-199-0-010770294349640608-tmp-tgz tar:///var/folders/rq/7blf91fs4x53kz8lxg1cdncm0000gp/T/npm-93160-mangbzBs/1456688500199-0.010770294349640608/tmp.tgz
+65 silly lockFile 8a32ead2-199-0-010770294349640608-tmp-tgz tar:///var/folders/rq/7blf91fs4x53kz8lxg1cdncm0000gp/T/npm-93160-mangbzBs/1456688500199-0.010770294349640608/tmp.tgz
+66 silly lockFile 97d8a936-pmjs-org-logcat-logcat-0-0-7-tgz https://registry.npmjs.org/logcat/-/logcat-0.0.7.tgz
+67 silly lockFile 97d8a936-pmjs-org-logcat-logcat-0-0-7-tgz https://registry.npmjs.org/logcat/-/logcat-0.0.7.tgz
+68 silly lockFile 24bfc9a0-logcat-0-0-7 logcat@0.0.7
+69 silly lockFile 24bfc9a0-logcat-0-0-7 logcat@0.0.7
+70 silly lockFile 2b47845d-logcat logcat@
+71 silly lockFile 2b47845d-logcat logcat@
+72 silly resolved [ { name: 'logcat',
+72 silly resolved     author: { name: 'Spirin Vladimir', email: 'spirin.vladimir@gmail.com' },
+72 silly resolved     dependencies: { colors: '*', 'express.io': '*' },
+72 silly resolved     version: '0.0.7',
+72 silly resolved     scripts: { test: 'mocha test/app.js' },
+72 silly resolved     description: 'Monitor android',
+72 silly resolved     devDependencies: { supertest: '~0.5.1', should: '~1.2.2', mocha: '^2.1.0' },
+72 silly resolved     repository:
+72 silly resolved      { type: 'git',
+72 silly resolved        url: 'git://github.com/spirinvladimir/logcat.git' },
+72 silly resolved     bin: { logcat: './bin/logcat' },
+72 silly resolved     keywords: [ 'adb', 'logcat', 'viewer' ],
+72 silly resolved     license: 'BSD',
+72 silly resolved     gitHead: 'c61ed2f62335192a6a9fe3504da90d4c644b7d03',
+72 silly resolved     readme: '## Description:\n\n Monitor android\n\n[![Dependency Status](https://gemnasium.com/spirinvladimir/logcat.png)](https://gemnasium.com/spirinvladimir/logcat)\n\n## How to start using:\n\n install:\n\n    $ npm install -g logcat\n\n use\n\n    $ logcat\n\n## Screen shots:\n\n In console:\n\n[ ![alt](https://raw.github.com/spirinvladimir/logcat/master/public/img/console-128x128.png) ](https://raw.github.com/spirinvladimir/logcat/master/public/img/console.png)\n\n In browser, open <http://localhost>:\n\n[ ![alt](https://raw.github.com/spirinvladimir/logcat/master/public/img/web-128x128.png) ](https://raw.github.com/spirinvladimir/logcat/master/public/img/web.png)\n\n## You can edit app.js:\n\n  * Change default command \'adb logcat\'\n  * Change default port(80)\n  * Add any string in `state` variable as you want\n  * ...\n\n```js\nvar util = require(\'util\'),\n\tcolors = require(\'colors\'),\n\tapp = require(\'express.io\')(),\n\tspawn = require(\'child_process\').spawn,\n\tstate = {\n\t\t\'success\': [\'success\', \'D\\/DroidGap\', \'D\\/CordovaLog\'],\n\t\t\'error\': [\'error\', \'E\\/\'],\n\t\t\'warning\': [\'warning\', \'W\\/Web Console\'],\n\t\t\'info\': [\'info\']\n\t},\n\tlogcat = spawn(\'adb\', [\'logcat\']);\n\napp.http().io();\napp.get(\'/\', function(req, res) {res.sendfile(__dirname + \'/public/client.html\');});\napp.get(\'/js/jquery-1.9.1.min.js\', function(req, res) {res.sendfile(__dirname + \'/public/js/jquery-1.9.1.min.js\');});\napp.get(\'/js/bootstrap.min.js\', function(req, res) {res.sendfile(__dirname + \'/public/js/bootstrap.min.js\');});\napp.get(\'/css/bootstrap.min.css\', function(req, res) {res.sendfile(__dirname + \'/public/css/bootstrap.min.css\');});\n\nvar parseStdout = function(data, _class) {\n\tdata.toString().split(\'\\n\').forEach(function(line) {\n\t\tif(line != \'\') {\n\t\t\tvar type = [\'info\'];\n\t\t\tif(state.hasOwnProperty(_class)) {\n\t\t\t\ttype.push(_class);\n\t\t\t} else {\n\t\t\t\tObject.keys(state).forEach(function(k) {\n\t\t\t\t\tif(util.isArray(state[k])) {\n\t\t\t\t\t\tstate[k].forEach(function(rx) {\n\t\t\t\t\t\t\tvar r = new RegExp(rx);\n\t\t\t\t\t\t\tif(r.test(line)) {\n\t\t\t\t\t\t\t\ttype.push(k);\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t});\n\t\t\t\t\t}\n\t\t\t\t});\n\t\t\t}\n\t\t\t\n\t\t\tif(type.indexOf(\'error\') >= 0) {\n\t\t\t\tconsole.log(line.red.bold);\n\t\t\t\tapp.io.broadcast(\'line\', {\'line\': line, \'type\': \'error\'});\n\t\t\t} else if(type.indexOf(\'warning\') >= 0) {\n\t\t\t\tconsole.log(line.yellow.bold);\n\t\t\t\tapp.io.broadcast(\'line\', {\'line\': line, \'type\': \'warning\'});\n\t\t\t} else if(type.indexOf(\'success\') >= 0) {\n\t\t\t\tconsole.log(line.green.bold);\n\t\t\t\tapp.io.broadcast(\'line\', {\'line\': line, \'type\': \'success\'});\n\t\t\t} else {\n\t\t\t\tconsole.log(line.blue.bold);\n\t\t\t\tapp.io.broadcast(\'line\', {\'line\': line, \'type\': type[0]});\n\t\t\t}\n\t\t}\n\t});\n};\n\nlogcat.stdout.on(\'data\', function(data){parseStdout(data);});\n\nlogcat.stderr.on(\'data\', function(data){parseStdout(data, \'error\');});\n\nlogcat.on(\'exit\', function (code) {\n\tlogcat = spawn(\'adb\', [\'logcat\']);\n});\n\napp.listen(80);\n```\n\n## You can edit /public/client.html:\n\n```html\n<html>\n\t<head>\n\t\t<title>logcat</title>\n\t\t<meta name="viewport" content="width=device-width, initial-scale=1.0">\n\t\t<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">\n\t\t<script src="js/jquery-1.9.1.min.js"></script>\n\t\t<script src="js/bootstrap.min.js"></script>\n\t\t<script src="/socket.io/socket.io.js"></script>\n\t\t<script>\n\t\t\tif (document.addEventListener) {\n\t\t\t\tdocument.addEventListener(\'DOMContentLoaded\', function () {\n\t\t\t\t\tvar socket = io.connect(),\n                        table = document.createElement("tbody"),\n                        firstChild;\n\t\t\t\t\tdocument.getElementsByTagName("table")[0].appendChild(table);\n\t\t\t\t\tfirstChild = table.firstChild;\n\t\t\t\t\tsocket.on(\'line\', function (x) {\n\t\t\t\t\t\tvar tr = document.createElement("tr");\n\t\t\t\t\t\ttr.appendChild(document.createElement("td")).appendChild(document.createTextNode(x.line));\n\t\t\t\t\t\ttr.setAttribute("class", x.type);\n\t\t\t\t\t\ttable.insertBefore(tr, firstChild);\n\t\t\t\t\t\tfirstChild = tr;\n\t\t\t\t\t});\n\t\t\t\t}, false);\n\t\t\t}\n\t\t</script>\n\t</head>\n\t<body><table class="table table-striped table-bordered table-hover"></table></body>\n</html>\n```\n\nAuthor: [Spirin Vladimir](https://github.com/spirinvladimir) [![Spirin Vladimir][gratipay-image]][gratipay-url]\n\n[gratipay-image]: https://img.shields.io/gratipay/spirinvladimir.svg?style=flat\n[gratipay-url]: https://gratipay.com/spirinvladimir/\n',
+72 silly resolved     readmeFilename: 'README.md',
+72 silly resolved     bugs: { url: 'https://github.com/spirinvladimir/logcat/issues' },
+72 silly resolved     homepage: 'https://github.com/spirinvladimir/logcat',
+72 silly resolved     _id: 'logcat@0.0.7',
+72 silly resolved     _shasum: '127b68ce5cccccc8b056af2c362f3ec1c952a907',
+72 silly resolved     _from: 'logcat@',
+72 silly resolved     _resolved: 'https://registry.npmjs.org/logcat/-/logcat-0.0.7.tgz' } ]
+73 info install logcat@0.0.7 into /usr/local/lib
+74 info installOne logcat@0.0.7
+75 info /usr/local/lib/node_modules/logcat unbuild
+76 verbose tar unpack /Users/aparna/.npm/logcat/0.0.7/package.tgz
+77 silly lockFile 5a39b007-sr-local-lib-node-modules-logcat tar:///usr/local/lib/node_modules/logcat
+78 verbose lock tar:///usr/local/lib/node_modules/logcat /Users/aparna/.npm/5a39b007-sr-local-lib-node-modules-logcat.lock
+79 silly lockFile 11c1f804-rna-npm-logcat-0-0-7-package-tgz tar:///Users/aparna/.npm/logcat/0.0.7/package.tgz
+80 verbose lock tar:///Users/aparna/.npm/logcat/0.0.7/package.tgz /Users/aparna/.npm/11c1f804-rna-npm-logcat-0-0-7-package-tgz.lock
+81 silly gunzTarPerm modes [ '755', '644' ]
+82 error Error: EACCES, mkdir '/usr/local/lib/node_modules/logcat'
+82 error  { [Error: EACCES, mkdir '/usr/local/lib/node_modules/logcat']
+82 error   errno: 3,
+82 error   code: 'EACCES',
+82 error   path: '/usr/local/lib/node_modules/logcat',
+82 error   fstream_type: 'Directory',
+82 error   fstream_path: '/usr/local/lib/node_modules/logcat',
+82 error   fstream_class: 'DirWriter',
+82 error   fstream_stack:
+82 error    [ '/usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23',
+82 error      '/usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:37:53',
+82 error      'Object.oncomplete (fs.js:107:15)' ] }
+83 error Please try running this command again as root/Administrator.
+84 error System Darwin 14.5.0
+85 error command "node" "/usr/local/bin/npm" "install" "-g" "logcat"
+86 error cwd /Users/aparna/Desktop/CodePath/Android/Android-twitter
+87 error node -v v0.10.28
+88 error npm -v 1.4.9
+89 error path /usr/local/lib/node_modules/logcat
+90 error fstream_path /usr/local/lib/node_modules/logcat
+91 error fstream_type Directory
+92 error fstream_class DirWriter
+93 error code EACCES
+94 error errno 3
+95 error stack Error: EACCES, mkdir '/usr/local/lib/node_modules/logcat'
+96 error fstream_stack /usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23
+96 error fstream_stack /usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:37:53
+96 error fstream_stack Object.oncomplete (fs.js:107:15)
+97 verbose exit [ 3, true ]
