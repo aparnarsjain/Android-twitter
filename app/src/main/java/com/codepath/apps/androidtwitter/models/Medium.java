@@ -1,67 +1,55 @@
 
 package com.codepath.apps.androidtwitter.models;
 
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.annotation.Generated;
 
-@JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("org.jsonschema2pojo")
-@JsonPropertyOrder({
-    "id",
-    "id_str",
-    "indices",
-    "media_url",
-    "media_url_https",
-    "url",
-    "display_url",
-    "expanded_url",
-    "type",
-    "sizes"
-})
 public class Medium implements Serializable {
 
-    @JsonProperty("id")
-    private Double id;
-    @JsonProperty("id_str")
+    @SerializedName("id")
+    @Expose
+    private Long id;
+    @SerializedName("id_str")
+    @Expose
     private String idStr;
-    @JsonProperty("indices")
-    private List<Integer> indices = new ArrayList<Integer>();
-    @JsonProperty("media_url")
+    @SerializedName("indices")
+    @Expose
+    private List<Long> indices = new ArrayList<Long>();
+    @SerializedName("media_url")
+    @Expose
     private String mediaUrl;
-    @JsonProperty("media_url_https")
+    @SerializedName("media_url_https")
+    @Expose
     private String mediaUrlHttps;
-    @JsonProperty("url")
+    @SerializedName("url")
+    @Expose
     private String url;
-    @JsonProperty("display_url")
+    @SerializedName("display_url")
+    @Expose
     private String displayUrl;
-    @JsonProperty("expanded_url")
+    @SerializedName("expanded_url")
+    @Expose
     private String expandedUrl;
-    @JsonProperty("type")
+    @SerializedName("type")
+    @Expose
     private String type;
-    @JsonProperty("sizes")
+    @SerializedName("sizes")
+    @Expose
     private Sizes sizes;
-    @JsonIgnore
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     /**
      * 
      * @return
      *     The id
      */
-    @JsonProperty("id")
-    public Double getId() {
+    public Long getId() {
         return id;
     }
 
@@ -70,8 +58,7 @@ public class Medium implements Serializable {
      * @param id
      *     The id
      */
-    @JsonProperty("id")
-    public void setId(Double id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -80,7 +67,6 @@ public class Medium implements Serializable {
      * @return
      *     The idStr
      */
-    @JsonProperty("id_str")
     public String getIdStr() {
         return idStr;
     }
@@ -90,7 +76,6 @@ public class Medium implements Serializable {
      * @param idStr
      *     The id_str
      */
-    @JsonProperty("id_str")
     public void setIdStr(String idStr) {
         this.idStr = idStr;
     }
@@ -100,8 +85,7 @@ public class Medium implements Serializable {
      * @return
      *     The indices
      */
-    @JsonProperty("indices")
-    public List<Integer> getIndices() {
+    public List<Long> getIndices() {
         return indices;
     }
 
@@ -110,8 +94,7 @@ public class Medium implements Serializable {
      * @param indices
      *     The indices
      */
-    @JsonProperty("indices")
-    public void setIndices(List<Integer> indices) {
+    public void setIndices(List<Long> indices) {
         this.indices = indices;
     }
 
@@ -120,7 +103,6 @@ public class Medium implements Serializable {
      * @return
      *     The mediaUrl
      */
-    @JsonProperty("media_url")
     public String getMediaUrl() {
         return mediaUrl;
     }
@@ -130,7 +112,6 @@ public class Medium implements Serializable {
      * @param mediaUrl
      *     The media_url
      */
-    @JsonProperty("media_url")
     public void setMediaUrl(String mediaUrl) {
         this.mediaUrl = mediaUrl;
     }
@@ -140,7 +121,6 @@ public class Medium implements Serializable {
      * @return
      *     The mediaUrlHttps
      */
-    @JsonProperty("media_url_https")
     public String getMediaUrlHttps() {
         return mediaUrlHttps;
     }
@@ -150,7 +130,6 @@ public class Medium implements Serializable {
      * @param mediaUrlHttps
      *     The media_url_https
      */
-    @JsonProperty("media_url_https")
     public void setMediaUrlHttps(String mediaUrlHttps) {
         this.mediaUrlHttps = mediaUrlHttps;
     }
@@ -160,7 +139,6 @@ public class Medium implements Serializable {
      * @return
      *     The url
      */
-    @JsonProperty("url")
     public String getUrl() {
         return url;
     }
@@ -170,7 +148,6 @@ public class Medium implements Serializable {
      * @param url
      *     The url
      */
-    @JsonProperty("url")
     public void setUrl(String url) {
         this.url = url;
     }
@@ -180,7 +157,6 @@ public class Medium implements Serializable {
      * @return
      *     The displayUrl
      */
-    @JsonProperty("display_url")
     public String getDisplayUrl() {
         return displayUrl;
     }
@@ -190,7 +166,6 @@ public class Medium implements Serializable {
      * @param displayUrl
      *     The display_url
      */
-    @JsonProperty("display_url")
     public void setDisplayUrl(String displayUrl) {
         this.displayUrl = displayUrl;
     }
@@ -200,7 +175,6 @@ public class Medium implements Serializable {
      * @return
      *     The expandedUrl
      */
-    @JsonProperty("expanded_url")
     public String getExpandedUrl() {
         return expandedUrl;
     }
@@ -210,7 +184,6 @@ public class Medium implements Serializable {
      * @param expandedUrl
      *     The expanded_url
      */
-    @JsonProperty("expanded_url")
     public void setExpandedUrl(String expandedUrl) {
         this.expandedUrl = expandedUrl;
     }
@@ -220,7 +193,6 @@ public class Medium implements Serializable {
      * @return
      *     The type
      */
-    @JsonProperty("type")
     public String getType() {
         return type;
     }
@@ -230,7 +202,6 @@ public class Medium implements Serializable {
      * @param type
      *     The type
      */
-    @JsonProperty("type")
     public void setType(String type) {
         this.type = type;
     }
@@ -240,7 +211,6 @@ public class Medium implements Serializable {
      * @return
      *     The sizes
      */
-    @JsonProperty("sizes")
     public Sizes getSizes() {
         return sizes;
     }
@@ -250,19 +220,8 @@ public class Medium implements Serializable {
      * @param sizes
      *     The sizes
      */
-    @JsonProperty("sizes")
     public void setSizes(Sizes sizes) {
         this.sizes = sizes;
-    }
-
-    @JsonAnyGetter
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    @JsonAnySetter
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
     }
 
 }

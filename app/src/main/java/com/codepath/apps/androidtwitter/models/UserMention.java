@@ -1,48 +1,39 @@
 
 package com.codepath.apps.androidtwitter.models;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
+import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-@JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("org.jsonschema2pojo")
-@JsonPropertyOrder({
-    "screen_name",
-    "name",
-    "id",
-    "id_str",
-    "indices"
-})
-public class UserMention {
+public class UserMention implements Serializable {
 
-    @JsonProperty("screen_name")
+    @SerializedName("screen_name")
+    @Expose
     private String screenName;
-    @JsonProperty("name")
+    @SerializedName("name")
+    @Expose
     private String name;
-    @JsonProperty("id")
-    private Integer id;
-    @JsonProperty("id_str")
+    @SerializedName("id")
+    @Expose
+    private Long id;
+    @SerializedName("id_str")
+    @Expose
     private String idStr;
-    @JsonProperty("indices")
-    private List<Integer> indices = new ArrayList<Integer>();
-    @JsonIgnore
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+    @SerializedName("indices")
+    @Expose
+    private List<Long> indices = new ArrayList<Long>();
 
     /**
      * 
      * @return
      *     The screenName
      */
-    @JsonProperty("screen_name")
     public String getScreenName() {
         return screenName;
     }
@@ -52,7 +43,6 @@ public class UserMention {
      * @param screenName
      *     The screen_name
      */
-    @JsonProperty("screen_name")
     public void setScreenName(String screenName) {
         this.screenName = screenName;
     }
@@ -62,7 +52,6 @@ public class UserMention {
      * @return
      *     The name
      */
-    @JsonProperty("name")
     public String getName() {
         return name;
     }
@@ -72,7 +61,6 @@ public class UserMention {
      * @param name
      *     The name
      */
-    @JsonProperty("name")
     public void setName(String name) {
         this.name = name;
     }
@@ -82,8 +70,7 @@ public class UserMention {
      * @return
      *     The id
      */
-    @JsonProperty("id")
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
@@ -92,8 +79,7 @@ public class UserMention {
      * @param id
      *     The id
      */
-    @JsonProperty("id")
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -102,7 +88,6 @@ public class UserMention {
      * @return
      *     The idStr
      */
-    @JsonProperty("id_str")
     public String getIdStr() {
         return idStr;
     }
@@ -112,7 +97,6 @@ public class UserMention {
      * @param idStr
      *     The id_str
      */
-    @JsonProperty("id_str")
     public void setIdStr(String idStr) {
         this.idStr = idStr;
     }
@@ -122,8 +106,7 @@ public class UserMention {
      * @return
      *     The indices
      */
-    @JsonProperty("indices")
-    public List<Integer> getIndices() {
+    public List<Long> getIndices() {
         return indices;
     }
 
@@ -132,19 +115,8 @@ public class UserMention {
      * @param indices
      *     The indices
      */
-    @JsonProperty("indices")
-    public void setIndices(List<Integer> indices) {
+    public void setIndices(List<Long> indices) {
         this.indices = indices;
-    }
-
-    @JsonAnyGetter
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    @JsonAnySetter
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
     }
 
 }

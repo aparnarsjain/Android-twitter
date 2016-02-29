@@ -1,43 +1,34 @@
 
 package com.codepath.apps.androidtwitter.models;
 
-import java.util.HashMap;
-import java.util.Map;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
+import java.io.Serializable;
+
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-@JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("org.jsonschema2pojo")
-@JsonPropertyOrder({
-    "large",
-    "thumb",
-    "medium",
-    "small"
-})
-public class Sizes {
+public class Sizes implements Serializable {
 
-    @JsonProperty("large")
+    @SerializedName("large")
+    @Expose
     private Large large;
-    @JsonProperty("thumb")
+    @SerializedName("thumb")
+    @Expose
     private Thumb thumb;
-    @JsonProperty("medium")
+    @SerializedName("medium")
+    @Expose
     private Medium_ medium;
-    @JsonProperty("small")
+    @SerializedName("small")
+    @Expose
     private Small small;
-    @JsonIgnore
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     /**
      * 
      * @return
      *     The large
      */
-    @JsonProperty("large")
     public Large getLarge() {
         return large;
     }
@@ -47,7 +38,6 @@ public class Sizes {
      * @param large
      *     The large
      */
-    @JsonProperty("large")
     public void setLarge(Large large) {
         this.large = large;
     }
@@ -57,7 +47,6 @@ public class Sizes {
      * @return
      *     The thumb
      */
-    @JsonProperty("thumb")
     public Thumb getThumb() {
         return thumb;
     }
@@ -67,7 +56,6 @@ public class Sizes {
      * @param thumb
      *     The thumb
      */
-    @JsonProperty("thumb")
     public void setThumb(Thumb thumb) {
         this.thumb = thumb;
     }
@@ -77,7 +65,6 @@ public class Sizes {
      * @return
      *     The medium
      */
-    @JsonProperty("medium")
     public Medium_ getMedium() {
         return medium;
     }
@@ -87,7 +74,6 @@ public class Sizes {
      * @param medium
      *     The medium
      */
-    @JsonProperty("medium")
     public void setMedium(Medium_ medium) {
         this.medium = medium;
     }
@@ -97,7 +83,6 @@ public class Sizes {
      * @return
      *     The small
      */
-    @JsonProperty("small")
     public Small getSmall() {
         return small;
     }
@@ -107,19 +92,8 @@ public class Sizes {
      * @param small
      *     The small
      */
-    @JsonProperty("small")
     public void setSmall(Small small) {
         this.small = small;
-    }
-
-    @JsonAnyGetter
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    @JsonAnySetter
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
     }
 
 }

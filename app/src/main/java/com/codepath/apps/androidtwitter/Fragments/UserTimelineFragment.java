@@ -63,9 +63,11 @@ public class UserTimelineFragment extends TweetsListFragment {
                 super.onSuccess(statusCode, headers, response);
                 Type collectionType = new TypeToken<ArrayList<Tweet>>() {
                 }.getType();
-                GsonBuilder gsonBuilder = new GsonBuilder();
-                gsonBuilder.setDateFormat(Tweet.DATE_FORMAT);
-                Gson gson = gsonBuilder.create();
+//                GsonBuilder gsonBuilder = new GsonBuilder();
+//                gsonBuilder.setDateFormat(Tweet.DATE_FORMAT);
+//                Gson gson = gsonBuilder.create();
+                Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().serializeNulls().create();
+
                 ArrayList<Tweet> tweets = gson.fromJson(response.toString(), collectionType);
                 addAll(tweets);
 //                addAll(Tweet.fromJsonArray(response));

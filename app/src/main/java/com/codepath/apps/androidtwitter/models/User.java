@@ -1,155 +1,143 @@
 
 package com.codepath.apps.androidtwitter.models;
 
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
-import java.util.HashMap;
-import java.util.Map;
 
 import javax.annotation.Generated;
 
-@JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("org.jsonschema2pojo")
-@JsonPropertyOrder({
-    "id",
-    "id_str",
-    "name",
-    "screen_name",
-    "location",
-    "description",
-    "url",
-    "entities",
-    "protected",
-    "followers_count",
-    "friends_count",
-    "listed_count",
-    "created_at",
-    "favourites_count",
-    "utc_offset",
-    "time_zone",
-    "geo_enabled",
-    "verified",
-    "statuses_count",
-    "lang",
-    "contributors_enabled",
-    "is_translator",
-    "is_translation_enabled",
-    "profile_background_color",
-    "profile_background_image_url",
-    "profile_background_image_url_https",
-    "profile_background_tile",
-    "profile_image_url",
-    "profile_image_url_https",
-    "profile_link_color",
-    "profile_sidebar_border_color",
-    "profile_sidebar_fill_color",
-    "profile_text_color",
-    "profile_use_background_image",
-    "has_extended_profile",
-    "default_profile",
-    "default_profile_image",
-    "following",
-    "follow_request_sent",
-    "notifications"
-})
 public class User implements Serializable {
 
-    @JsonProperty("id")
-    private Integer id;
-    @JsonProperty("id_str")
+    @SerializedName("id")
+    @Expose
+    private Long id;
+    @SerializedName("id_str")
+    @Expose
     private String idStr;
-    @JsonProperty("name")
+    @SerializedName("name")
+    @Expose
     private String name;
-    @JsonProperty("screen_name")
+    @SerializedName("screen_name")
+    @Expose
     private String screenName;
-    @JsonProperty("location")
+    @SerializedName("location")
+    @Expose
     private String location;
-    @JsonProperty("description")
+    @SerializedName("description")
+    @Expose
     private String description;
-    @JsonProperty("url")
+    @SerializedName("url")
+    @Expose
     private String url;
-    @JsonProperty("entities")
+    @SerializedName("entities")
+    @Expose
     private Entities entities;
-    @JsonProperty("protected")
+    @SerializedName("protected")
+    @Expose
     private Boolean _protected;
-    @JsonProperty("followers_count")
-    private Integer followersCount;
-    @JsonProperty("friends_count")
-    private Integer friendsCount;
-    @JsonProperty("listed_count")
-    private Integer listedCount;
-    @JsonProperty("created_at")
+    @SerializedName("followers_count")
+    @Expose
+    private Long followersCount;
+    @SerializedName("friends_count")
+    @Expose
+    private Long friendsCount;
+    @SerializedName("listed_count")
+    @Expose
+    private Long listedCount;
+    @SerializedName("created_at")
+    @Expose
     private String createdAt;
-    @JsonProperty("favourites_count")
-    private Integer favouritesCount;
-    @JsonProperty("utc_offset")
+    @SerializedName("favourites_count")
+    @Expose
+    private Long favouritesCount;
+    @SerializedName("utc_offset")
+    @Expose
     private Object utcOffset;
-    @JsonProperty("time_zone")
+    @SerializedName("time_zone")
+    @Expose
     private Object timeZone;
-    @JsonProperty("geo_enabled")
+    @SerializedName("geo_enabled")
+    @Expose
     private Boolean geoEnabled;
-    @JsonProperty("verified")
+    @SerializedName("verified")
+    @Expose
     private Boolean verified;
-    @JsonProperty("statuses_count")
-    private Integer statusesCount;
-    @JsonProperty("lang")
+    @SerializedName("statuses_count")
+    @Expose
+    private Long statusesCount;
+    @SerializedName("lang")
+    @Expose
     private String lang;
-    @JsonProperty("contributors_enabled")
+    @SerializedName("contributors_enabled")
+    @Expose
     private Boolean contributorsEnabled;
-    @JsonProperty("is_translator")
+    @SerializedName("is_translator")
+    @Expose
     private Boolean isTranslator;
-    @JsonProperty("is_translation_enabled")
+    @SerializedName("is_translation_enabled")
+    @Expose
     private Boolean isTranslationEnabled;
-    @JsonProperty("profile_background_color")
+    @SerializedName("profile_background_color")
+    @Expose
     private String profileBackgroundColor;
-    @JsonProperty("profile_background_image_url")
+    @SerializedName("profile_background_image_url")
+    @Expose
     private String profileBackgroundImageUrl;
-    @JsonProperty("profile_background_image_url_https")
+    @SerializedName("profile_background_image_url_https")
+    @Expose
     private String profileBackgroundImageUrlHttps;
-    @JsonProperty("profile_background_tile")
+    @SerializedName("profile_background_tile")
+    @Expose
     private Boolean profileBackgroundTile;
-    @JsonProperty("profile_image_url")
+    @SerializedName("profile_image_url")
+    @Expose
     private String profileImageUrl;
-    @JsonProperty("profile_image_url_https")
+    @SerializedName("profile_image_url_https")
+    @Expose
     private String profileImageUrlHttps;
-    @JsonProperty("profile_link_color")
+    @SerializedName("profile_link_color")
+    @Expose
     private String profileLinkColor;
-    @JsonProperty("profile_sidebar_border_color")
+    @SerializedName("profile_sidebar_border_color")
+    @Expose
     private String profileSidebarBorderColor;
-    @JsonProperty("profile_sidebar_fill_color")
+    @SerializedName("profile_sidebar_fill_color")
+    @Expose
     private String profileSidebarFillColor;
-    @JsonProperty("profile_text_color")
+    @SerializedName("profile_text_color")
+    @Expose
     private String profileTextColor;
-    @JsonProperty("profile_use_background_image")
+    @SerializedName("profile_use_background_image")
+    @Expose
     private Boolean profileUseBackgroundImage;
-    @JsonProperty("has_extended_profile")
+    @SerializedName("has_extended_profile")
+    @Expose
     private Boolean hasExtendedProfile;
-    @JsonProperty("default_profile")
+    @SerializedName("default_profile")
+    @Expose
     private Boolean defaultProfile;
-    @JsonProperty("default_profile_image")
+    @SerializedName("default_profile_image")
+    @Expose
     private Boolean defaultProfileImage;
-    @JsonProperty("following")
+    @SerializedName("following")
+    @Expose
     private Boolean following;
-    @JsonProperty("follow_request_sent")
+    @SerializedName("follow_request_sent")
+    @Expose
     private Boolean followRequestSent;
-    @JsonProperty("notifications")
+    @SerializedName("notifications")
+    @Expose
     private Boolean notifications;
-    @JsonIgnore
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     /**
      * 
      * @return
      *     The id
      */
-    @JsonProperty("id")
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
@@ -158,8 +146,7 @@ public class User implements Serializable {
      * @param id
      *     The id
      */
-    @JsonProperty("id")
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -168,7 +155,6 @@ public class User implements Serializable {
      * @return
      *     The idStr
      */
-    @JsonProperty("id_str")
     public String getIdStr() {
         return idStr;
     }
@@ -178,7 +164,6 @@ public class User implements Serializable {
      * @param idStr
      *     The id_str
      */
-    @JsonProperty("id_str")
     public void setIdStr(String idStr) {
         this.idStr = idStr;
     }
@@ -188,7 +173,6 @@ public class User implements Serializable {
      * @return
      *     The name
      */
-    @JsonProperty("name")
     public String getName() {
         return name;
     }
@@ -198,7 +182,6 @@ public class User implements Serializable {
      * @param name
      *     The name
      */
-    @JsonProperty("name")
     public void setName(String name) {
         this.name = name;
     }
@@ -208,7 +191,6 @@ public class User implements Serializable {
      * @return
      *     The screenName
      */
-    @JsonProperty("screen_name")
     public String getScreenName() {
         return screenName;
     }
@@ -218,7 +200,6 @@ public class User implements Serializable {
      * @param screenName
      *     The screen_name
      */
-    @JsonProperty("screen_name")
     public void setScreenName(String screenName) {
         this.screenName = screenName;
     }
@@ -228,7 +209,6 @@ public class User implements Serializable {
      * @return
      *     The location
      */
-    @JsonProperty("location")
     public String getLocation() {
         return location;
     }
@@ -238,7 +218,6 @@ public class User implements Serializable {
      * @param location
      *     The location
      */
-    @JsonProperty("location")
     public void setLocation(String location) {
         this.location = location;
     }
@@ -248,7 +227,6 @@ public class User implements Serializable {
      * @return
      *     The description
      */
-    @JsonProperty("description")
     public String getDescription() {
         return description;
     }
@@ -258,7 +236,6 @@ public class User implements Serializable {
      * @param description
      *     The description
      */
-    @JsonProperty("description")
     public void setDescription(String description) {
         this.description = description;
     }
@@ -268,7 +245,6 @@ public class User implements Serializable {
      * @return
      *     The url
      */
-    @JsonProperty("url")
     public String getUrl() {
         return url;
     }
@@ -278,7 +254,6 @@ public class User implements Serializable {
      * @param url
      *     The url
      */
-    @JsonProperty("url")
     public void setUrl(String url) {
         this.url = url;
     }
@@ -288,7 +263,6 @@ public class User implements Serializable {
      * @return
      *     The entities
      */
-    @JsonProperty("entities")
     public Entities getEntities() {
         return entities;
     }
@@ -298,7 +272,6 @@ public class User implements Serializable {
      * @param entities
      *     The entities
      */
-    @JsonProperty("entities")
     public void setEntities(Entities entities) {
         this.entities = entities;
     }
@@ -308,7 +281,6 @@ public class User implements Serializable {
      * @return
      *     The _protected
      */
-    @JsonProperty("protected")
     public Boolean getProtected() {
         return _protected;
     }
@@ -318,7 +290,6 @@ public class User implements Serializable {
      * @param _protected
      *     The protected
      */
-    @JsonProperty("protected")
     public void setProtected(Boolean _protected) {
         this._protected = _protected;
     }
@@ -328,8 +299,7 @@ public class User implements Serializable {
      * @return
      *     The followersCount
      */
-    @JsonProperty("followers_count")
-    public Integer getFollowersCount() {
+    public Long getFollowersCount() {
         return followersCount;
     }
 
@@ -338,8 +308,7 @@ public class User implements Serializable {
      * @param followersCount
      *     The followers_count
      */
-    @JsonProperty("followers_count")
-    public void setFollowersCount(Integer followersCount) {
+    public void setFollowersCount(Long followersCount) {
         this.followersCount = followersCount;
     }
 
@@ -348,8 +317,7 @@ public class User implements Serializable {
      * @return
      *     The friendsCount
      */
-    @JsonProperty("friends_count")
-    public Integer getFriendsCount() {
+    public Long getFriendsCount() {
         return friendsCount;
     }
 
@@ -358,8 +326,7 @@ public class User implements Serializable {
      * @param friendsCount
      *     The friends_count
      */
-    @JsonProperty("friends_count")
-    public void setFriendsCount(Integer friendsCount) {
+    public void setFriendsCount(Long friendsCount) {
         this.friendsCount = friendsCount;
     }
 
@@ -368,8 +335,7 @@ public class User implements Serializable {
      * @return
      *     The listedCount
      */
-    @JsonProperty("listed_count")
-    public Integer getListedCount() {
+    public Long getListedCount() {
         return listedCount;
     }
 
@@ -378,8 +344,7 @@ public class User implements Serializable {
      * @param listedCount
      *     The listed_count
      */
-    @JsonProperty("listed_count")
-    public void setListedCount(Integer listedCount) {
+    public void setListedCount(Long listedCount) {
         this.listedCount = listedCount;
     }
 
@@ -388,7 +353,6 @@ public class User implements Serializable {
      * @return
      *     The createdAt
      */
-    @JsonProperty("created_at")
     public String getCreatedAt() {
         return createdAt;
     }
@@ -398,7 +362,6 @@ public class User implements Serializable {
      * @param createdAt
      *     The created_at
      */
-    @JsonProperty("created_at")
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -408,8 +371,7 @@ public class User implements Serializable {
      * @return
      *     The favouritesCount
      */
-    @JsonProperty("favourites_count")
-    public Integer getFavouritesCount() {
+    public Long getFavouritesCount() {
         return favouritesCount;
     }
 
@@ -418,8 +380,7 @@ public class User implements Serializable {
      * @param favouritesCount
      *     The favourites_count
      */
-    @JsonProperty("favourites_count")
-    public void setFavouritesCount(Integer favouritesCount) {
+    public void setFavouritesCount(Long favouritesCount) {
         this.favouritesCount = favouritesCount;
     }
 
@@ -428,7 +389,6 @@ public class User implements Serializable {
      * @return
      *     The utcOffset
      */
-    @JsonProperty("utc_offset")
     public Object getUtcOffset() {
         return utcOffset;
     }
@@ -438,7 +398,6 @@ public class User implements Serializable {
      * @param utcOffset
      *     The utc_offset
      */
-    @JsonProperty("utc_offset")
     public void setUtcOffset(Object utcOffset) {
         this.utcOffset = utcOffset;
     }
@@ -448,7 +407,6 @@ public class User implements Serializable {
      * @return
      *     The timeZone
      */
-    @JsonProperty("time_zone")
     public Object getTimeZone() {
         return timeZone;
     }
@@ -458,7 +416,6 @@ public class User implements Serializable {
      * @param timeZone
      *     The time_zone
      */
-    @JsonProperty("time_zone")
     public void setTimeZone(Object timeZone) {
         this.timeZone = timeZone;
     }
@@ -468,7 +425,6 @@ public class User implements Serializable {
      * @return
      *     The geoEnabled
      */
-    @JsonProperty("geo_enabled")
     public Boolean getGeoEnabled() {
         return geoEnabled;
     }
@@ -478,7 +434,6 @@ public class User implements Serializable {
      * @param geoEnabled
      *     The geo_enabled
      */
-    @JsonProperty("geo_enabled")
     public void setGeoEnabled(Boolean geoEnabled) {
         this.geoEnabled = geoEnabled;
     }
@@ -488,7 +443,6 @@ public class User implements Serializable {
      * @return
      *     The verified
      */
-    @JsonProperty("verified")
     public Boolean getVerified() {
         return verified;
     }
@@ -498,7 +452,6 @@ public class User implements Serializable {
      * @param verified
      *     The verified
      */
-    @JsonProperty("verified")
     public void setVerified(Boolean verified) {
         this.verified = verified;
     }
@@ -508,8 +461,7 @@ public class User implements Serializable {
      * @return
      *     The statusesCount
      */
-    @JsonProperty("statuses_count")
-    public Integer getStatusesCount() {
+    public Long getStatusesCount() {
         return statusesCount;
     }
 
@@ -518,8 +470,7 @@ public class User implements Serializable {
      * @param statusesCount
      *     The statuses_count
      */
-    @JsonProperty("statuses_count")
-    public void setStatusesCount(Integer statusesCount) {
+    public void setStatusesCount(Long statusesCount) {
         this.statusesCount = statusesCount;
     }
 
@@ -528,7 +479,6 @@ public class User implements Serializable {
      * @return
      *     The lang
      */
-    @JsonProperty("lang")
     public String getLang() {
         return lang;
     }
@@ -538,7 +488,6 @@ public class User implements Serializable {
      * @param lang
      *     The lang
      */
-    @JsonProperty("lang")
     public void setLang(String lang) {
         this.lang = lang;
     }
@@ -548,7 +497,6 @@ public class User implements Serializable {
      * @return
      *     The contributorsEnabled
      */
-    @JsonProperty("contributors_enabled")
     public Boolean getContributorsEnabled() {
         return contributorsEnabled;
     }
@@ -558,7 +506,6 @@ public class User implements Serializable {
      * @param contributorsEnabled
      *     The contributors_enabled
      */
-    @JsonProperty("contributors_enabled")
     public void setContributorsEnabled(Boolean contributorsEnabled) {
         this.contributorsEnabled = contributorsEnabled;
     }
@@ -568,7 +515,6 @@ public class User implements Serializable {
      * @return
      *     The isTranslator
      */
-    @JsonProperty("is_translator")
     public Boolean getIsTranslator() {
         return isTranslator;
     }
@@ -578,7 +524,6 @@ public class User implements Serializable {
      * @param isTranslator
      *     The is_translator
      */
-    @JsonProperty("is_translator")
     public void setIsTranslator(Boolean isTranslator) {
         this.isTranslator = isTranslator;
     }
@@ -588,7 +533,6 @@ public class User implements Serializable {
      * @return
      *     The isTranslationEnabled
      */
-    @JsonProperty("is_translation_enabled")
     public Boolean getIsTranslationEnabled() {
         return isTranslationEnabled;
     }
@@ -598,7 +542,6 @@ public class User implements Serializable {
      * @param isTranslationEnabled
      *     The is_translation_enabled
      */
-    @JsonProperty("is_translation_enabled")
     public void setIsTranslationEnabled(Boolean isTranslationEnabled) {
         this.isTranslationEnabled = isTranslationEnabled;
     }
@@ -608,7 +551,6 @@ public class User implements Serializable {
      * @return
      *     The profileBackgroundColor
      */
-    @JsonProperty("profile_background_color")
     public String getProfileBackgroundColor() {
         return profileBackgroundColor;
     }
@@ -618,7 +560,6 @@ public class User implements Serializable {
      * @param profileBackgroundColor
      *     The profile_background_color
      */
-    @JsonProperty("profile_background_color")
     public void setProfileBackgroundColor(String profileBackgroundColor) {
         this.profileBackgroundColor = profileBackgroundColor;
     }
@@ -628,7 +569,6 @@ public class User implements Serializable {
      * @return
      *     The profileBackgroundImageUrl
      */
-    @JsonProperty("profile_background_image_url")
     public String getProfileBackgroundImageUrl() {
         return profileBackgroundImageUrl;
     }
@@ -638,7 +578,6 @@ public class User implements Serializable {
      * @param profileBackgroundImageUrl
      *     The profile_background_image_url
      */
-    @JsonProperty("profile_background_image_url")
     public void setProfileBackgroundImageUrl(String profileBackgroundImageUrl) {
         this.profileBackgroundImageUrl = profileBackgroundImageUrl;
     }
@@ -648,7 +587,6 @@ public class User implements Serializable {
      * @return
      *     The profileBackgroundImageUrlHttps
      */
-    @JsonProperty("profile_background_image_url_https")
     public String getProfileBackgroundImageUrlHttps() {
         return profileBackgroundImageUrlHttps;
     }
@@ -658,7 +596,6 @@ public class User implements Serializable {
      * @param profileBackgroundImageUrlHttps
      *     The profile_background_image_url_https
      */
-    @JsonProperty("profile_background_image_url_https")
     public void setProfileBackgroundImageUrlHttps(String profileBackgroundImageUrlHttps) {
         this.profileBackgroundImageUrlHttps = profileBackgroundImageUrlHttps;
     }
@@ -668,7 +605,6 @@ public class User implements Serializable {
      * @return
      *     The profileBackgroundTile
      */
-    @JsonProperty("profile_background_tile")
     public Boolean getProfileBackgroundTile() {
         return profileBackgroundTile;
     }
@@ -678,7 +614,6 @@ public class User implements Serializable {
      * @param profileBackgroundTile
      *     The profile_background_tile
      */
-    @JsonProperty("profile_background_tile")
     public void setProfileBackgroundTile(Boolean profileBackgroundTile) {
         this.profileBackgroundTile = profileBackgroundTile;
     }
@@ -688,7 +623,6 @@ public class User implements Serializable {
      * @return
      *     The profileImageUrl
      */
-    @JsonProperty("profile_image_url")
     public String getProfileImageUrl() {
         return profileImageUrl;
     }
@@ -698,7 +632,6 @@ public class User implements Serializable {
      * @param profileImageUrl
      *     The profile_image_url
      */
-    @JsonProperty("profile_image_url")
     public void setProfileImageUrl(String profileImageUrl) {
         this.profileImageUrl = profileImageUrl;
     }
@@ -708,7 +641,6 @@ public class User implements Serializable {
      * @return
      *     The profileImageUrlHttps
      */
-    @JsonProperty("profile_image_url_https")
     public String getProfileImageUrlHttps() {
         return profileImageUrlHttps;
     }
@@ -718,7 +650,6 @@ public class User implements Serializable {
      * @param profileImageUrlHttps
      *     The profile_image_url_https
      */
-    @JsonProperty("profile_image_url_https")
     public void setProfileImageUrlHttps(String profileImageUrlHttps) {
         this.profileImageUrlHttps = profileImageUrlHttps;
     }
@@ -728,7 +659,6 @@ public class User implements Serializable {
      * @return
      *     The profileLinkColor
      */
-    @JsonProperty("profile_link_color")
     public String getProfileLinkColor() {
         return profileLinkColor;
     }
@@ -738,7 +668,6 @@ public class User implements Serializable {
      * @param profileLinkColor
      *     The profile_link_color
      */
-    @JsonProperty("profile_link_color")
     public void setProfileLinkColor(String profileLinkColor) {
         this.profileLinkColor = profileLinkColor;
     }
@@ -748,7 +677,6 @@ public class User implements Serializable {
      * @return
      *     The profileSidebarBorderColor
      */
-    @JsonProperty("profile_sidebar_border_color")
     public String getProfileSidebarBorderColor() {
         return profileSidebarBorderColor;
     }
@@ -758,7 +686,6 @@ public class User implements Serializable {
      * @param profileSidebarBorderColor
      *     The profile_sidebar_border_color
      */
-    @JsonProperty("profile_sidebar_border_color")
     public void setProfileSidebarBorderColor(String profileSidebarBorderColor) {
         this.profileSidebarBorderColor = profileSidebarBorderColor;
     }
@@ -768,7 +695,6 @@ public class User implements Serializable {
      * @return
      *     The profileSidebarFillColor
      */
-    @JsonProperty("profile_sidebar_fill_color")
     public String getProfileSidebarFillColor() {
         return profileSidebarFillColor;
     }
@@ -778,7 +704,6 @@ public class User implements Serializable {
      * @param profileSidebarFillColor
      *     The profile_sidebar_fill_color
      */
-    @JsonProperty("profile_sidebar_fill_color")
     public void setProfileSidebarFillColor(String profileSidebarFillColor) {
         this.profileSidebarFillColor = profileSidebarFillColor;
     }
@@ -788,7 +713,6 @@ public class User implements Serializable {
      * @return
      *     The profileTextColor
      */
-    @JsonProperty("profile_text_color")
     public String getProfileTextColor() {
         return profileTextColor;
     }
@@ -798,7 +722,6 @@ public class User implements Serializable {
      * @param profileTextColor
      *     The profile_text_color
      */
-    @JsonProperty("profile_text_color")
     public void setProfileTextColor(String profileTextColor) {
         this.profileTextColor = profileTextColor;
     }
@@ -808,7 +731,6 @@ public class User implements Serializable {
      * @return
      *     The profileUseBackgroundImage
      */
-    @JsonProperty("profile_use_background_image")
     public Boolean getProfileUseBackgroundImage() {
         return profileUseBackgroundImage;
     }
@@ -818,7 +740,6 @@ public class User implements Serializable {
      * @param profileUseBackgroundImage
      *     The profile_use_background_image
      */
-    @JsonProperty("profile_use_background_image")
     public void setProfileUseBackgroundImage(Boolean profileUseBackgroundImage) {
         this.profileUseBackgroundImage = profileUseBackgroundImage;
     }
@@ -828,7 +749,6 @@ public class User implements Serializable {
      * @return
      *     The hasExtendedProfile
      */
-    @JsonProperty("has_extended_profile")
     public Boolean getHasExtendedProfile() {
         return hasExtendedProfile;
     }
@@ -838,7 +758,6 @@ public class User implements Serializable {
      * @param hasExtendedProfile
      *     The has_extended_profile
      */
-    @JsonProperty("has_extended_profile")
     public void setHasExtendedProfile(Boolean hasExtendedProfile) {
         this.hasExtendedProfile = hasExtendedProfile;
     }
@@ -848,7 +767,6 @@ public class User implements Serializable {
      * @return
      *     The defaultProfile
      */
-    @JsonProperty("default_profile")
     public Boolean getDefaultProfile() {
         return defaultProfile;
     }
@@ -858,7 +776,6 @@ public class User implements Serializable {
      * @param defaultProfile
      *     The default_profile
      */
-    @JsonProperty("default_profile")
     public void setDefaultProfile(Boolean defaultProfile) {
         this.defaultProfile = defaultProfile;
     }
@@ -868,7 +785,6 @@ public class User implements Serializable {
      * @return
      *     The defaultProfileImage
      */
-    @JsonProperty("default_profile_image")
     public Boolean getDefaultProfileImage() {
         return defaultProfileImage;
     }
@@ -878,7 +794,6 @@ public class User implements Serializable {
      * @param defaultProfileImage
      *     The default_profile_image
      */
-    @JsonProperty("default_profile_image")
     public void setDefaultProfileImage(Boolean defaultProfileImage) {
         this.defaultProfileImage = defaultProfileImage;
     }
@@ -888,7 +803,6 @@ public class User implements Serializable {
      * @return
      *     The following
      */
-    @JsonProperty("following")
     public Boolean getFollowing() {
         return following;
     }
@@ -898,7 +812,6 @@ public class User implements Serializable {
      * @param following
      *     The following
      */
-    @JsonProperty("following")
     public void setFollowing(Boolean following) {
         this.following = following;
     }
@@ -908,7 +821,6 @@ public class User implements Serializable {
      * @return
      *     The followRequestSent
      */
-    @JsonProperty("follow_request_sent")
     public Boolean getFollowRequestSent() {
         return followRequestSent;
     }
@@ -918,7 +830,6 @@ public class User implements Serializable {
      * @param followRequestSent
      *     The follow_request_sent
      */
-    @JsonProperty("follow_request_sent")
     public void setFollowRequestSent(Boolean followRequestSent) {
         this.followRequestSent = followRequestSent;
     }
@@ -928,7 +839,6 @@ public class User implements Serializable {
      * @return
      *     The notifications
      */
-    @JsonProperty("notifications")
     public Boolean getNotifications() {
         return notifications;
     }
@@ -938,19 +848,8 @@ public class User implements Serializable {
      * @param notifications
      *     The notifications
      */
-    @JsonProperty("notifications")
     public void setNotifications(Boolean notifications) {
         this.notifications = notifications;
-    }
-
-    @JsonAnyGetter
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    @JsonAnySetter
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
     }
 
 }

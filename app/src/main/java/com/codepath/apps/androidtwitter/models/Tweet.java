@@ -1,102 +1,91 @@
 
 package com.codepath.apps.androidtwitter.models;
 
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
-import java.util.HashMap;
-import java.util.Map;
 
 import javax.annotation.Generated;
 
-@JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("org.jsonschema2pojo")
-@JsonPropertyOrder({
-    "created_at",
-    "id",
-    "id_str",
-    "text",
-    "truncated",
-    "source",
-    "in_reply_to_status_id",
-    "in_reply_to_status_id_str",
-    "in_reply_to_user_id",
-    "in_reply_to_user_id_str",
-    "in_reply_to_screen_name",
-    "user",
-    "geo",
-    "coordinates",
-    "place",
-    "contributors",
-    "is_quote_status",
-    "retweet_count",
-    "favorite_count",
-    "entities",
-    "extended_entities",
-    "favorited",
-    "retweeted",
-    "possibly_sensitive",
-    "lang"
-})
 public class Tweet implements Serializable {
 
-    @JsonProperty("created_at")
+    @SerializedName("created_at")
+    @Expose
     private String createdAt;
-    @JsonProperty("id")
-    private Double id;
-    @JsonProperty("id_str")
+    @SerializedName("id")
+    @Expose
+    private Long id;
+    @SerializedName("id_str")
+    @Expose
     private String idStr;
-    @JsonProperty("text")
+    @SerializedName("text")
+    @Expose
     private String text;
-    @JsonProperty("truncated")
+    @SerializedName("truncated")
+    @Expose
     private Boolean truncated;
-    @JsonProperty("source")
+    @SerializedName("source")
+    @Expose
     private String source;
-    @JsonProperty("in_reply_to_status_id")
+    @SerializedName("in_reply_to_status_id")
+    @Expose
     private Object inReplyToStatusId;
-    @JsonProperty("in_reply_to_status_id_str")
+    @SerializedName("in_reply_to_status_id_str")
+    @Expose
     private Object inReplyToStatusIdStr;
-    @JsonProperty("in_reply_to_user_id")
+    @SerializedName("in_reply_to_user_id")
+    @Expose
     private Object inReplyToUserId;
-    @JsonProperty("in_reply_to_user_id_str")
+    @SerializedName("in_reply_to_user_id_str")
+    @Expose
     private Object inReplyToUserIdStr;
-    @JsonProperty("in_reply_to_screen_name")
+    @SerializedName("in_reply_to_screen_name")
+    @Expose
     private Object inReplyToScreenName;
-    @JsonProperty("user")
+    @SerializedName("user")
+    @Expose
     private User user;
-    @JsonProperty("geo")
+    @SerializedName("geo")
+    @Expose
     private Object geo;
-    @JsonProperty("coordinates")
+    @SerializedName("coordinates")
+    @Expose
     private Object coordinates;
-    @JsonProperty("place")
+    @SerializedName("place")
+    @Expose
     private Object place;
-    @JsonProperty("contributors")
+    @SerializedName("contributors")
+    @Expose
     private Object contributors;
-    @JsonProperty("is_quote_status")
+    @SerializedName("is_quote_status")
+    @Expose
     private Boolean isQuoteStatus;
-    @JsonProperty("retweet_count")
-    private Integer retweetCount;
-    @JsonProperty("favorite_count")
-    private Integer favoriteCount;
-    @JsonProperty("entities")
+    @SerializedName("retweet_count")
+    @Expose
+    private Long retweetCount;
+    @SerializedName("favorite_count")
+    @Expose
+    private Long favoriteCount;
+    @SerializedName("entities")
+    @Expose
     private Entities_ entities;
-    @JsonProperty("extended_entities")
+    @SerializedName("extended_entities")
+    @Expose
     private ExtendedEntities extendedEntities;
-    @JsonProperty("favorited")
+    @SerializedName("favorited")
+    @Expose
     private Boolean favorited;
-    @JsonProperty("retweeted")
+    @SerializedName("retweeted")
+    @Expose
     private Boolean retweeted;
-    @JsonProperty("possibly_sensitive")
+    @SerializedName("possibly_sensitive")
+    @Expose
     private Boolean possiblySensitive;
-    @JsonProperty("lang")
+    @SerializedName("lang")
+    @Expose
     private String lang;
-    @JsonIgnore
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
     public static final String DATE_FORMAT = "ccc MMM dd hh:mm:ss Z yyyy";
 
     /**
@@ -104,7 +93,6 @@ public class Tweet implements Serializable {
      * @return
      *     The createdAt
      */
-    @JsonProperty("created_at")
     public String getCreatedAt() {
         return createdAt;
     }
@@ -114,7 +102,6 @@ public class Tweet implements Serializable {
      * @param createdAt
      *     The created_at
      */
-    @JsonProperty("created_at")
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -124,8 +111,7 @@ public class Tweet implements Serializable {
      * @return
      *     The id
      */
-    @JsonProperty("id")
-    public Double getId() {
+    public Long getId() {
         return id;
     }
 
@@ -134,8 +120,7 @@ public class Tweet implements Serializable {
      * @param id
      *     The id
      */
-    @JsonProperty("id")
-    public void setId(Double id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -144,7 +129,6 @@ public class Tweet implements Serializable {
      * @return
      *     The idStr
      */
-    @JsonProperty("id_str")
     public String getIdStr() {
         return idStr;
     }
@@ -154,7 +138,6 @@ public class Tweet implements Serializable {
      * @param idStr
      *     The id_str
      */
-    @JsonProperty("id_str")
     public void setIdStr(String idStr) {
         this.idStr = idStr;
     }
@@ -164,7 +147,6 @@ public class Tweet implements Serializable {
      * @return
      *     The text
      */
-    @JsonProperty("text")
     public String getText() {
         return text;
     }
@@ -174,7 +156,6 @@ public class Tweet implements Serializable {
      * @param text
      *     The text
      */
-    @JsonProperty("text")
     public void setText(String text) {
         this.text = text;
     }
@@ -184,7 +165,6 @@ public class Tweet implements Serializable {
      * @return
      *     The truncated
      */
-    @JsonProperty("truncated")
     public Boolean getTruncated() {
         return truncated;
     }
@@ -194,7 +174,6 @@ public class Tweet implements Serializable {
      * @param truncated
      *     The truncated
      */
-    @JsonProperty("truncated")
     public void setTruncated(Boolean truncated) {
         this.truncated = truncated;
     }
@@ -204,7 +183,6 @@ public class Tweet implements Serializable {
      * @return
      *     The source
      */
-    @JsonProperty("source")
     public String getSource() {
         return source;
     }
@@ -214,7 +192,6 @@ public class Tweet implements Serializable {
      * @param source
      *     The source
      */
-    @JsonProperty("source")
     public void setSource(String source) {
         this.source = source;
     }
@@ -224,7 +201,6 @@ public class Tweet implements Serializable {
      * @return
      *     The inReplyToStatusId
      */
-    @JsonProperty("in_reply_to_status_id")
     public Object getInReplyToStatusId() {
         return inReplyToStatusId;
     }
@@ -234,7 +210,6 @@ public class Tweet implements Serializable {
      * @param inReplyToStatusId
      *     The in_reply_to_status_id
      */
-    @JsonProperty("in_reply_to_status_id")
     public void setInReplyToStatusId(Object inReplyToStatusId) {
         this.inReplyToStatusId = inReplyToStatusId;
     }
@@ -244,7 +219,6 @@ public class Tweet implements Serializable {
      * @return
      *     The inReplyToStatusIdStr
      */
-    @JsonProperty("in_reply_to_status_id_str")
     public Object getInReplyToStatusIdStr() {
         return inReplyToStatusIdStr;
     }
@@ -254,7 +228,6 @@ public class Tweet implements Serializable {
      * @param inReplyToStatusIdStr
      *     The in_reply_to_status_id_str
      */
-    @JsonProperty("in_reply_to_status_id_str")
     public void setInReplyToStatusIdStr(Object inReplyToStatusIdStr) {
         this.inReplyToStatusIdStr = inReplyToStatusIdStr;
     }
@@ -264,7 +237,6 @@ public class Tweet implements Serializable {
      * @return
      *     The inReplyToUserId
      */
-    @JsonProperty("in_reply_to_user_id")
     public Object getInReplyToUserId() {
         return inReplyToUserId;
     }
@@ -274,7 +246,6 @@ public class Tweet implements Serializable {
      * @param inReplyToUserId
      *     The in_reply_to_user_id
      */
-    @JsonProperty("in_reply_to_user_id")
     public void setInReplyToUserId(Object inReplyToUserId) {
         this.inReplyToUserId = inReplyToUserId;
     }
@@ -284,7 +255,6 @@ public class Tweet implements Serializable {
      * @return
      *     The inReplyToUserIdStr
      */
-    @JsonProperty("in_reply_to_user_id_str")
     public Object getInReplyToUserIdStr() {
         return inReplyToUserIdStr;
     }
@@ -294,7 +264,6 @@ public class Tweet implements Serializable {
      * @param inReplyToUserIdStr
      *     The in_reply_to_user_id_str
      */
-    @JsonProperty("in_reply_to_user_id_str")
     public void setInReplyToUserIdStr(Object inReplyToUserIdStr) {
         this.inReplyToUserIdStr = inReplyToUserIdStr;
     }
@@ -304,7 +273,6 @@ public class Tweet implements Serializable {
      * @return
      *     The inReplyToScreenName
      */
-    @JsonProperty("in_reply_to_screen_name")
     public Object getInReplyToScreenName() {
         return inReplyToScreenName;
     }
@@ -314,7 +282,6 @@ public class Tweet implements Serializable {
      * @param inReplyToScreenName
      *     The in_reply_to_screen_name
      */
-    @JsonProperty("in_reply_to_screen_name")
     public void setInReplyToScreenName(Object inReplyToScreenName) {
         this.inReplyToScreenName = inReplyToScreenName;
     }
@@ -324,7 +291,6 @@ public class Tweet implements Serializable {
      * @return
      *     The user
      */
-    @JsonProperty("user")
     public User getUser() {
         return user;
     }
@@ -334,7 +300,6 @@ public class Tweet implements Serializable {
      * @param user
      *     The user
      */
-    @JsonProperty("user")
     public void setUser(User user) {
         this.user = user;
     }
@@ -344,7 +309,6 @@ public class Tweet implements Serializable {
      * @return
      *     The geo
      */
-    @JsonProperty("geo")
     public Object getGeo() {
         return geo;
     }
@@ -354,7 +318,6 @@ public class Tweet implements Serializable {
      * @param geo
      *     The geo
      */
-    @JsonProperty("geo")
     public void setGeo(Object geo) {
         this.geo = geo;
     }
@@ -364,7 +327,6 @@ public class Tweet implements Serializable {
      * @return
      *     The coordinates
      */
-    @JsonProperty("coordinates")
     public Object getCoordinates() {
         return coordinates;
     }
@@ -374,7 +336,6 @@ public class Tweet implements Serializable {
      * @param coordinates
      *     The coordinates
      */
-    @JsonProperty("coordinates")
     public void setCoordinates(Object coordinates) {
         this.coordinates = coordinates;
     }
@@ -384,7 +345,6 @@ public class Tweet implements Serializable {
      * @return
      *     The place
      */
-    @JsonProperty("place")
     public Object getPlace() {
         return place;
     }
@@ -394,7 +354,6 @@ public class Tweet implements Serializable {
      * @param place
      *     The place
      */
-    @JsonProperty("place")
     public void setPlace(Object place) {
         this.place = place;
     }
@@ -404,7 +363,6 @@ public class Tweet implements Serializable {
      * @return
      *     The contributors
      */
-    @JsonProperty("contributors")
     public Object getContributors() {
         return contributors;
     }
@@ -414,7 +372,6 @@ public class Tweet implements Serializable {
      * @param contributors
      *     The contributors
      */
-    @JsonProperty("contributors")
     public void setContributors(Object contributors) {
         this.contributors = contributors;
     }
@@ -424,7 +381,6 @@ public class Tweet implements Serializable {
      * @return
      *     The isQuoteStatus
      */
-    @JsonProperty("is_quote_status")
     public Boolean getIsQuoteStatus() {
         return isQuoteStatus;
     }
@@ -434,7 +390,6 @@ public class Tweet implements Serializable {
      * @param isQuoteStatus
      *     The is_quote_status
      */
-    @JsonProperty("is_quote_status")
     public void setIsQuoteStatus(Boolean isQuoteStatus) {
         this.isQuoteStatus = isQuoteStatus;
     }
@@ -444,8 +399,7 @@ public class Tweet implements Serializable {
      * @return
      *     The retweetCount
      */
-    @JsonProperty("retweet_count")
-    public Integer getRetweetCount() {
+    public Long getRetweetCount() {
         return retweetCount;
     }
 
@@ -454,8 +408,7 @@ public class Tweet implements Serializable {
      * @param retweetCount
      *     The retweet_count
      */
-    @JsonProperty("retweet_count")
-    public void setRetweetCount(Integer retweetCount) {
+    public void setRetweetCount(Long retweetCount) {
         this.retweetCount = retweetCount;
     }
 
@@ -464,8 +417,7 @@ public class Tweet implements Serializable {
      * @return
      *     The favoriteCount
      */
-    @JsonProperty("favorite_count")
-    public Integer getFavoriteCount() {
+    public Long getFavoriteCount() {
         return favoriteCount;
     }
 
@@ -474,8 +426,7 @@ public class Tweet implements Serializable {
      * @param favoriteCount
      *     The favorite_count
      */
-    @JsonProperty("favorite_count")
-    public void setFavoriteCount(Integer favoriteCount) {
+    public void setFavoriteCount(Long favoriteCount) {
         this.favoriteCount = favoriteCount;
     }
 
@@ -484,7 +435,6 @@ public class Tweet implements Serializable {
      * @return
      *     The entities
      */
-    @JsonProperty("entities")
     public Entities_ getEntities() {
         return entities;
     }
@@ -494,7 +444,6 @@ public class Tweet implements Serializable {
      * @param entities
      *     The entities
      */
-    @JsonProperty("entities")
     public void setEntities(Entities_ entities) {
         this.entities = entities;
     }
@@ -504,7 +453,6 @@ public class Tweet implements Serializable {
      * @return
      *     The extendedEntities
      */
-    @JsonProperty("extended_entities")
     public ExtendedEntities getExtendedEntities() {
         return extendedEntities;
     }
@@ -514,7 +462,6 @@ public class Tweet implements Serializable {
      * @param extendedEntities
      *     The extended_entities
      */
-    @JsonProperty("extended_entities")
     public void setExtendedEntities(ExtendedEntities extendedEntities) {
         this.extendedEntities = extendedEntities;
     }
@@ -524,7 +471,6 @@ public class Tweet implements Serializable {
      * @return
      *     The favorited
      */
-    @JsonProperty("favorited")
     public Boolean getFavorited() {
         return favorited;
     }
@@ -534,7 +480,6 @@ public class Tweet implements Serializable {
      * @param favorited
      *     The favorited
      */
-    @JsonProperty("favorited")
     public void setFavorited(Boolean favorited) {
         this.favorited = favorited;
     }
@@ -544,7 +489,6 @@ public class Tweet implements Serializable {
      * @return
      *     The retweeted
      */
-    @JsonProperty("retweeted")
     public Boolean getRetweeted() {
         return retweeted;
     }
@@ -554,7 +498,6 @@ public class Tweet implements Serializable {
      * @param retweeted
      *     The retweeted
      */
-    @JsonProperty("retweeted")
     public void setRetweeted(Boolean retweeted) {
         this.retweeted = retweeted;
     }
@@ -564,7 +507,6 @@ public class Tweet implements Serializable {
      * @return
      *     The possiblySensitive
      */
-    @JsonProperty("possibly_sensitive")
     public Boolean getPossiblySensitive() {
         return possiblySensitive;
     }
@@ -574,7 +516,6 @@ public class Tweet implements Serializable {
      * @param possiblySensitive
      *     The possibly_sensitive
      */
-    @JsonProperty("possibly_sensitive")
     public void setPossiblySensitive(Boolean possiblySensitive) {
         this.possiblySensitive = possiblySensitive;
     }
@@ -584,7 +525,6 @@ public class Tweet implements Serializable {
      * @return
      *     The lang
      */
-    @JsonProperty("lang")
     public String getLang() {
         return lang;
     }
@@ -594,19 +534,8 @@ public class Tweet implements Serializable {
      * @param lang
      *     The lang
      */
-    @JsonProperty("lang")
     public void setLang(String lang) {
         this.lang = lang;
-    }
-
-    @JsonAnyGetter
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    @JsonAnySetter
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
     }
 
 }

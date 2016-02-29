@@ -1,43 +1,32 @@
 
 package com.codepath.apps.androidtwitter.models;
 
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.io.Serializable;
 
 import javax.annotation.Generated;
 
-@JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("org.jsonschema2pojo")
-@JsonPropertyOrder({
-    "w",
-    "h",
-    "resize"
-})
-public class Medium_ {
+public class Medium_ implements Serializable {
 
-    @JsonProperty("w")
-    private Integer w;
-    @JsonProperty("h")
-    private Integer h;
-    @JsonProperty("resize")
+    @SerializedName("w")
+    @Expose
+    private Long w;
+    @SerializedName("h")
+    @Expose
+    private Long h;
+    @SerializedName("resize")
+    @Expose
     private String resize;
-    @JsonIgnore
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     /**
      * 
      * @return
      *     The w
      */
-    @JsonProperty("w")
-    public Integer getW() {
+    public Long getW() {
         return w;
     }
 
@@ -46,8 +35,7 @@ public class Medium_ {
      * @param w
      *     The w
      */
-    @JsonProperty("w")
-    public void setW(Integer w) {
+    public void setW(Long w) {
         this.w = w;
     }
 
@@ -56,8 +44,7 @@ public class Medium_ {
      * @return
      *     The h
      */
-    @JsonProperty("h")
-    public Integer getH() {
+    public Long getH() {
         return h;
     }
 
@@ -66,8 +53,7 @@ public class Medium_ {
      * @param h
      *     The h
      */
-    @JsonProperty("h")
-    public void setH(Integer h) {
+    public void setH(Long h) {
         this.h = h;
     }
 
@@ -76,7 +62,6 @@ public class Medium_ {
      * @return
      *     The resize
      */
-    @JsonProperty("resize")
     public String getResize() {
         return resize;
     }
@@ -86,19 +71,8 @@ public class Medium_ {
      * @param resize
      *     The resize
      */
-    @JsonProperty("resize")
     public void setResize(String resize) {
         this.resize = resize;
-    }
-
-    @JsonAnyGetter
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    @JsonAnySetter
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
     }
 
 }

@@ -1,51 +1,39 @@
 
 package com.codepath.apps.androidtwitter.models;
 
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.annotation.Generated;
 
-@JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("org.jsonschema2pojo")
-@JsonPropertyOrder({
-    "hashtags",
-    "symbols",
-    "user_mentions",
-    "urls",
-    "media"
-})
 public class Entities_ implements Serializable {
 
-    @JsonProperty("hashtags")
+    @SerializedName("hashtags")
+    @Expose
     private List<Object> hashtags = new ArrayList<Object>();
-    @JsonProperty("symbols")
+    @SerializedName("symbols")
+    @Expose
     private List<Object> symbols = new ArrayList<Object>();
-    @JsonProperty("user_mentions")
+    @SerializedName("user_mentions")
+    @Expose
     private List<UserMention> userMentions = new ArrayList<UserMention>();
-    @JsonProperty("urls")
+    @SerializedName("urls")
+    @Expose
     private List<Object> urls = new ArrayList<Object>();
-    @JsonProperty("media")
+    @SerializedName("media")
+    @Expose
     private List<Medium> media = new ArrayList<Medium>();
-    @JsonIgnore
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     /**
      * 
      * @return
      *     The hashtags
      */
-    @JsonProperty("hashtags")
     public List<Object> getHashtags() {
         return hashtags;
     }
@@ -55,7 +43,6 @@ public class Entities_ implements Serializable {
      * @param hashtags
      *     The hashtags
      */
-    @JsonProperty("hashtags")
     public void setHashtags(List<Object> hashtags) {
         this.hashtags = hashtags;
     }
@@ -65,7 +52,6 @@ public class Entities_ implements Serializable {
      * @return
      *     The symbols
      */
-    @JsonProperty("symbols")
     public List<Object> getSymbols() {
         return symbols;
     }
@@ -75,7 +61,6 @@ public class Entities_ implements Serializable {
      * @param symbols
      *     The symbols
      */
-    @JsonProperty("symbols")
     public void setSymbols(List<Object> symbols) {
         this.symbols = symbols;
     }
@@ -85,7 +70,6 @@ public class Entities_ implements Serializable {
      * @return
      *     The userMentions
      */
-    @JsonProperty("user_mentions")
     public List<UserMention> getUserMentions() {
         return userMentions;
     }
@@ -95,7 +79,6 @@ public class Entities_ implements Serializable {
      * @param userMentions
      *     The user_mentions
      */
-    @JsonProperty("user_mentions")
     public void setUserMentions(List<UserMention> userMentions) {
         this.userMentions = userMentions;
     }
@@ -105,7 +88,6 @@ public class Entities_ implements Serializable {
      * @return
      *     The urls
      */
-    @JsonProperty("urls")
     public List<Object> getUrls() {
         return urls;
     }
@@ -115,7 +97,6 @@ public class Entities_ implements Serializable {
      * @param urls
      *     The urls
      */
-    @JsonProperty("urls")
     public void setUrls(List<Object> urls) {
         this.urls = urls;
     }
@@ -125,7 +106,6 @@ public class Entities_ implements Serializable {
      * @return
      *     The media
      */
-    @JsonProperty("media")
     public List<Medium> getMedia() {
         return media;
     }
@@ -135,19 +115,8 @@ public class Entities_ implements Serializable {
      * @param media
      *     The media
      */
-    @JsonProperty("media")
     public void setMedia(List<Medium> media) {
         this.media = media;
-    }
-
-    @JsonAnyGetter
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    @JsonAnySetter
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
     }
 
 }
