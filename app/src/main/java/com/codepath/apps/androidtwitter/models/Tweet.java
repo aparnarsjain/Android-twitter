@@ -108,7 +108,7 @@ import java.util.Locale;
 //parse the JSON + store the data, encapsulte state logic or any display logic
 public class Tweet implements Serializable {
     private String text;
-    private long uid; //unique id for the tweet
+    private long id; //unique id for the tweet
     private User user;
     private String createdAt;
 
@@ -120,8 +120,8 @@ public class Tweet implements Serializable {
         return text;
     }
 
-    public long getUid() {
-        return uid;
+    public long getId() {
+        return id;
     }
 
     public String getCreatedAt() {
@@ -143,7 +143,7 @@ public class Tweet implements Serializable {
 //        Tweet tweet = new Tweet();
 //        try {
 //            tweet.text = jsonObject.getString("text");
-//            tweet.uid = jsonObject.getLong("id");
+//            tweet.id = jsonObject.getLong("id");
 //            tweet.createdAt = getRelativeTimeAgo(jsonObject.getString("created_at"));
 //            tweet.user = User.fromJsonObject(jsonObject.getJSONObject("user"));
 //        } catch (JSONException e) {

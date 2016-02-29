@@ -42,8 +42,6 @@ public class ProfileActivity extends AppCompatActivity {
         String screenName = "";
 
         Tweet tweet = (Tweet)getIntent().getSerializableExtra("tweet");
-//        Tweet tweet = (Tweet) Parcels.unwrap(getIntent().getParcelableExtra("tweet"));
-
         if (tweet != null){
             user = tweet.getUser();
             screenName = user.getScreen_name();
@@ -64,7 +62,6 @@ public class ProfileActivity extends AppCompatActivity {
             screenName = getIntent().getStringExtra("screenName");
         }
 
-
         if (savedInstanceState == null) {
             UserTimelineFragment fragmentUserTimeline = UserTimelineFragment.newInstance(screenName);
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
@@ -75,7 +72,7 @@ public class ProfileActivity extends AppCompatActivity {
 
     private void populateProfileHeader(User user) {
         tvUserName.setText(user.getScreen_name());
-        tvTagLine.setText(user.getTag_line());
+        tvTagLine.setText(user.getDescription());
         tvFollowers.setText(Long.toString(user.getFollowers_count()));
         tvFollowing.setText(Long.toString(user.getFollowing_count()));
         Glide.with(this).load(user.getProfile_image_url()).centerCrop().into(ivUserImage);

@@ -41,7 +41,7 @@ public class UserTimelineFragment extends TweetsListFragment {
 //                fetchMoreTweets(page);
                 List<Tweet> tweets = aTweets.getTweets();
                 Tweet lastTweet = tweets.get(tweets.size() - 1);
-                populateTimeline(lastTweet.getUid(), 25);
+                populateTimeline(lastTweet.getId(), 25);
             }
         });
         return v;
@@ -55,8 +55,10 @@ public class UserTimelineFragment extends TweetsListFragment {
         return fragmentUserTimeline;
     }
 
-    private void populateTimeline(long max_id, int count) {
+    private void populateTimeline(final long max_id, int count) {
         String screenName = getArguments().getString("screenName");
+        final int currSize = aTweets.getTweets().size();
+
         client.getUserTimeline(screenName, new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
@@ -67,8 +69,7 @@ public class UserTimelineFragment extends TweetsListFragment {
                 gsonBuilder.setDateFormat(Tweet.DATE_FORMAT);
                 Gson gson = gsonBuilder.create();
                 ArrayList<Tweet> tweets = gson.fromJson(response.toString(), collectionType);
-                addAll(tweets);
-//                addAll(Tweet.fromJsonArray(response));
+                addAll(tweets, max_id, currSize);
                 Log.d("DEBUG", "success " + response.toString());
             }
 

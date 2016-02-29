@@ -43,7 +43,7 @@ public class TweetsListFragment extends Fragment {
 ////                fetchMoreTweets(page);
 //                List<Tweet> tweets = aTweets.getTweets();
 //                Tweet lastTweet = tweets.get(tweets.size()-1);
-////                populateTimeline(lastTweet.getUid(), 25);
+////                populateTimeline(lastTweet.getId(), 25);
 //            }
 //        });
         return v;
@@ -54,8 +54,17 @@ public class TweetsListFragment extends Fragment {
         aTweets = new TweetsArrayAdapter(getActivity(), new ArrayList<Tweet>());
 
     }
-    public void addAll(ArrayList<Tweet> tweets) {
-        aTweets.addAll(tweets);
-        aTweets.notifyDataSetChanged();
+    public void addAll(ArrayList<Tweet> tweets, long max_id, int currSize) {
+        if (max_id == -1){//new stuff
+            aTweets.clearAll();
+            aTweets.addAll(tweets);
+            aTweets.notifyDataSetChanged();
+        }else {
+            if(tweets.size() > 1){
+                aTweets.addAll(tweets);
+                aTweets.notifyItemRangeInserted(currSize, tweets.size() -1);
+            }
+        }
+
     }
 }
