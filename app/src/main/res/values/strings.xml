@@ -5,5 +5,7 @@
     <string name="login_label">Log in</string>
     <string name="title_activity_timeline">Home Timeline</string>
     <string name="string_tweet">Tweet</string>
+    <string name="title_activity_profile">Profile</string>
+    <string name="title_activity_detail">DetailActivity</string>
 
 </resources>

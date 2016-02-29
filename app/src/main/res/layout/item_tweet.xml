@@ -10,7 +10,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:background="#eba4a4"
+        android:background="#ffffff"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="5dp" />
@@ -23,7 +23,8 @@
         android:textColor="@color/DarkerGray"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/ivImage"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_alignParentStart="false" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -40,18 +41,20 @@
         android:layout_marginBottom="5dp" />
 
     <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
         android:id="@+id/btnReply"
+        android:src="@drawable/ic_reply_action"
         android:layout_below="@+id/tvBody"
         android:layout_alignLeft="@+id/tvBody"
         android:layout_alignStart="@+id/tvBody" />
 
     <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
         android:id="@+id/btnRetweet"
         android:layout_below="@+id/tvBody"
+        android:src="@drawable/ic_retweet_action"
         android:layout_centerHorizontal="true" />
 
     <TextView
@@ -60,9 +63,10 @@
         android:text="411"
         android:id="@+id/tvRetweetCount"
         android:layout_below="@+id/tvBody"
-        android:layout_toRightOf="@+id/btnRetweet"
+        android:layout_toRightOf="@id/btnRetweet"
+        android:layout_alignTop="@id/btnRetweet"
         android:layout_marginLeft="5dp"
-        android:layout_toEndOf="@+id/tvUserName" />
+         />
 
     <TextView
         android:layout_width="wrap_content"
