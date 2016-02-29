@@ -18,4 +18,4 @@ Advanced: Robust error handling, check if internet is available, handle error ca
 Gif Image
   
   
- -![Alt Text](twitterreduxgif.gif)
+ -![Alt Text](twitterreduxgif2.gif)
