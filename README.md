@@ -15,3 +15,7 @@ Advanced: Robust error handling, check if internet is available, handle error ca
 * [x] Advanced: User can click on a tweet to be taken to a "detail view" of that tweet (1 point)
 * [x] Bonus: Apply the popular Butterknife annotation library to reduce view boilerplate. (1 point)
 
+Gif Image
+  
+  
+ -![Alt Text](twitterreduxgif.gif)
