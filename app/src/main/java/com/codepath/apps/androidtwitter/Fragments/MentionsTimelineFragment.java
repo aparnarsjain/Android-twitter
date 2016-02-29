@@ -58,7 +58,6 @@ public class MentionsTimelineFragment extends TweetsListFragment {
                 Gson gson = gsonBuilder.create();
                 ArrayList<Tweet> tweets = gson.fromJson(response.toString(), collectionType);
                 addAll(tweets);
-//                addAll(Tweet.fromJsonArray(response));
                 Log.d("DEBUG", "success getMentionsTimeline " + response.toString());
             }
 

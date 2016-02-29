@@ -10,7 +10,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:background="#eba4a4"
+        android:background="#ffffff"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="5dp" />
@@ -23,7 +23,8 @@
         android:textColor="@color/DarkerGray"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/ivImage"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_alignParentStart="false" />
 
     <TextView
         android:layout_width="wrap_content"
